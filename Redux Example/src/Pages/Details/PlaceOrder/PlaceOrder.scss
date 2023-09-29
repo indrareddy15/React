@@ -1,0 +1,128 @@
+body {
+  background-color: gainsboro;
+}
+.placeorder-wrapper {
+  margin: auto;
+  margin-top: 40px;
+  .placeorder-body {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    margin: auto;
+    margin-top: 50px;
+  }
+  .placeorder-items {
+    display: grid;
+    background-color: white;
+    margin: 10px;
+    width: 300px;
+    grid-template-columns: 25% 25% 25% 25%;
+    border-radius: 10px;
+    padding: 10px;
+    & > button {
+      width: 30px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  .Add {
+    background-color: lightgray;
+  }
+  .Remove {
+    background-color: lightgray;
+  }
+  .Display-Cart-Wrapper{
+    margin: 0 auto;
+    margin-top: 30px ;
+    width: 500px;
+    border-radius: 10px;
+    background-color: white;
+  }
+  .Display-Cart-Header{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    padding: 10px;
+  }
+  .Display-cart-body{
+    & > div {
+      display: grid;
+      grid-template-columns: 30% 30% 30%;
+      padding: 10px;
+    }
+  }
+  .Display-Cart-Total{
+    display: grid;
+    border-top: 2px solid lightgrey;
+    grid-template-columns: 30% 30% 30%;
+    padding: 10px;
+  }
+  .Cart-Wrapper{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    justify-items: start;
+    align-items: end;
+  }
+  .btn-div{
+    background-color: rgb(22, 87, 102);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+  }
+  .input-search{
+    height: 30px;
+    border-radius:10px ;
+  }
+  
+}
+@media screen and (max-width: 1100px) {
+  .placeorder-wrapper {
+    .placeorder-body {
+      grid-template-columns: repeat(2, 50%);
+      margin: auto;
+    }
+    .Display-Cart-Wrapper{
+      width: 400px;
+    }
+    .Cart-Wrapper{
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    }
+    .btn-div{
+      background-color: rgb(22, 87, 102);
+      width: 100px; 
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  }
+
+}
+@media screen and (max-width: 660px) {
+  .placeorder-wrapper {
+    .placeorder-body {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: repeat(1, 100%);
+      margin: auto;
+    }
+    .Display-Cart-Wrapper{
+      width: 400px;
+    }
+    .Cart-Wrapper{
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    }
+    .btn-div{
+      background-color: rgb(22, 87, 102);
+      width: 100px; 
+      margin-top: 10px;
+
+    }
+  }
+ 
+}

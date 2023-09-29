@@ -1,0 +1,28 @@
+.Login-Wrapper{
+    margin: 200px auto;
+    width: 40%;
+    background-color: lightblue;
+    text-align: center;
+    padding: 40px;
+    & > div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .Login-username{
+        margin-bottom:50px ;
+    }
+    .Login-Password{
+        margin-bottom:50px ;
+    }
+    .btn{
+        background-color: green;
+        color: white;
+        width: 140px;
+        height: 30px;
+        border-radius: 10px;
+        border:none;
+        cursor: pointer;
+    }
+
+}

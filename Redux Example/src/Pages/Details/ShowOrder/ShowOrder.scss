@@ -1,0 +1,51 @@
+.Show-Items {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  .Show-Items-Wrapper {
+    background-color: white;
+    margin-top: 20px;
+    width: 250px;
+
+    .Show-Items-Card {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+    }
+    .Show-Items-Header {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      border-bottom: 3px solid lightgray;
+      & > span {
+        padding-left: 10px;
+      }
+    }
+    .Show-Items-Footer {
+      position: relative;
+      bottom: 0px;
+    }
+  }
+}
+.Date-Field {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  .date-input {
+    height: 30px;
+  }
+}
+
+.Show-Items-Footer{
+}
+
+@media screen and (max-width: 1100px) {
+  .Show-Items {
+    grid-template-columns: repeat(2, 40%);
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .Show-Items {
+    grid-template-columns: repeat(1, 70%);
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,25 @@
+.Menu{
+    display: flex;   
+    flex-direction: row;
+    background-color: black;
+    height: 40px;
+    position: sticky;
+    top: 0px;
+    color: white; 
+    align-items: center;  
+    justify-content: space-around;
+    & > div{
+        cursor: pointer;
+        width: 130px;
+        border-radius:10px;
+    }
+    .active{
+        background-color: white;
+        color: black;
+    }
+    
+}
+
+
+
+
