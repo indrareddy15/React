@@ -11,7 +11,7 @@ router.route('/').get(getGoals).post(postGoals)
 // router.get('/', getGoals)
 // router.post('/', postGoals)
 
-router.route('/:id').put(postGoals).delete(deleteGoals);
+router.route('/:id').put(putGoals).delete(deleteGoals);
 
 //Similirly put and delete are having same routes they can be chained into one by using routes
 
