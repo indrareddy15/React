@@ -1,8 +1,10 @@
 const { MongoClient } = require("mongodb");
 
 let dbConnection;
+let uri = 'mongodb://localhost:27017/booksstore'
+
 const conntectDB = (callBackFun) => {
-    MongoClient.connect('mongodb://localhost:27017/booksstore')
+    MongoClient.connect(uri)
         .then((client) => {
             dbConnection = client.db();
             return callBackFun()
