@@ -3,7 +3,11 @@ const express = require('express')
 //express app
 const app = express()
 
+const mongoose = require('mongoose');
+
 const port = process.env.PORT || 5000;
+
+const uri = "mongodb+srv://jedihew1508:jedihew1508@mernapp.cwr93iy.mongodb.net/?retryWrites=true&w=majority"
 
 const workoutRoutes = require("./routes/workouts")
 
@@ -19,6 +23,16 @@ app.use((req, res, next) => {
 //routes
 app.use('/api/workouts', workoutRoutes)
 
+// connect to db
+
+mongoose.connect(uri)
+    .then(() => {
+        app.listen(port, () => {
+            console.log(`Connected to DB and Server started at ${port}`)
+        });
+    })
+    .catch((error) => {
+        console.log(error);
+    })
 
 //listining port
-app.listen(port, () => console.log(`Server started at ${port}`));

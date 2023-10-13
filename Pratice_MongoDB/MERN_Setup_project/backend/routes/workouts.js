@@ -1,4 +1,5 @@
 const express = require('express')
+const Workout = require('../models/workoutModels')
 
 const router = express.Router()
 
@@ -14,6 +15,14 @@ router.get('/:id', (req, res) => {
 
 //POST all workout
 router.post('/', (req, res) => {
+    const { title, load, reps } = req.body
+
+    try {
+        const workout = Workout.createOne({ title, load, reps })
+        res.status(200).json(workout)
+    } catch (error) {
+        res.status(500).json({ error: "error in adding workouts" })
+    }
     res.json({ message: "POST all the workouts!" })
 })
 
