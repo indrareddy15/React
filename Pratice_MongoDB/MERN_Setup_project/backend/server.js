@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 
 const port = process.env.PORT || 5000;
 
-const uri = "mongodb+srv://jedihew1508:jedihew1508@mernapp.cwr93iy.mongodb.net/?retryWrites=true&w=majority"
+const uri = ""
 
 const workoutRoutes = require("./routes/workouts")
 
