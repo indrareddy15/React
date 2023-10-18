@@ -6,9 +6,6 @@ const mongoose = require('mongoose');
 const app = express()
 const port = process.env.PORT || 5000;
 
-const uri = ""
-
-
 // middleware
 app.use(express.json())
 
@@ -23,6 +20,7 @@ app.use((req, res, next) => {
 app.use('/api/workouts', workoutRoutes)
 
 // connect to db
+const uri = ""
 mongoose.connect(uri)
     .then(() => {
         app.listen(port, () => {

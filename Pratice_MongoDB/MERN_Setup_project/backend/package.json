@@ -1,7 +1,7 @@
 {
   "name": "mern_setup_project",
   "version": "1.0.0",
-  "description": "MERN Pratice Project",
+  "description": "REST API developed on node JS and MongoDB database for a Workouts",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

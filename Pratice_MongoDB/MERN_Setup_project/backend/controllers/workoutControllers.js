@@ -45,6 +45,7 @@ const postWorkout = async (req, res) => {
         return res.status(400).json({ error: 'Plaese fill the all fields', emptyFields })
     }
 
+    // this is main post functionility 
     try {
         const workouts = await Workout.create({ title, load, reps })
         res.status(200).json(workouts)
