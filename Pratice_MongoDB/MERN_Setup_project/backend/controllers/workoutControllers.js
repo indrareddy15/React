@@ -30,6 +30,7 @@ const getSingleWorkouts = async (req, res) => {
 const postWorkout = async (req, res) => {
     const { title, load, reps } = req.body
 
+    // Line no 33 to 47 is forntend checking to throw custom error
     let emptyFields = []
 
     if (!title) {

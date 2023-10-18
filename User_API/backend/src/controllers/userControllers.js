@@ -11,6 +11,10 @@ const getUsers = async (req, res) => {
 const getOneUser = async (req, res) => {
     const { id } = req.params;
 
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).send({ error: 'User not found' });
+    }
+
     const users = await userSchema.findById(id);
     res.status(200).json(users);
 };
@@ -31,6 +35,10 @@ const postUsers = async (req, res) => {
 const updateUsers = async (req, res) => {
     const { id } = req.params;
 
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).send({ error: 'User not found' });
+    }
+
     const users = await userSchema.findByIdAndUpdate(
         { _id: id },
         { ...req.params }
@@ -44,7 +52,11 @@ const updateUsers = async (req, res) => {
 
 // DELETE the user
 const deleteUsers = async (req, res) => {
+
     const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).send({ error: 'User not found' });
+    }
 
     const users = await userSchema.findByIdAndDelete({ _id: id });
 
@@ -59,5 +71,5 @@ module.exports = {
     getOneUser,
     postUsers,
     updateUsers,
-    deleteUsers,
+    deleteUsers
 };
