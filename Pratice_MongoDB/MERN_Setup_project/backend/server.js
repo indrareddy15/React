@@ -1,30 +1,28 @@
 const express = require('express')
+const workoutRoutes = require("./routes/workouts")
+const mongoose = require('mongoose');
 
 //express app
 const app = express()
-
-const mongoose = require('mongoose');
-
 const port = process.env.PORT || 5000;
 
 const uri = ""
 
-const workoutRoutes = require("./routes/workouts")
 
 // middleware
 app.use(express.json())
 
+// For Testing we have used app.use and consoled what is happening in req, res and next
 app.use((req, res, next) => {
     console.log(req.path, req.method);
     next()
 })
 
 
-//routes
+// routes
 app.use('/api/workouts', workoutRoutes)
 
 // connect to db
-
 mongoose.connect(uri)
     .then(() => {
         app.listen(port, () => {
@@ -34,5 +32,3 @@ mongoose.connect(uri)
     .catch((error) => {
         console.log(error);
     })
-
-//listining port
