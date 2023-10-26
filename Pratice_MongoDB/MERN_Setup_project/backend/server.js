@@ -1,5 +1,5 @@
 const express = require('express')
-const workoutRoutes = require("./routes/workouts")
+const workoutRoutes = require("./src/routes/workouts")
 const mongoose = require('mongoose');
 
 //express app
