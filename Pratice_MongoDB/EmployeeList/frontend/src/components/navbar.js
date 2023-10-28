@@ -4,8 +4,10 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 // We import NavLink to utilize the react router.
 import { NavLink } from "react-router-dom";
+import CreateUser from "./create";
 // Here, we display our Navbar
-export default function Navbar() {
+
+const Navbar = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -27,7 +29,7 @@ export default function Navbar() {
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/create">
-                                Create Record
+                                <CreateUser />
                             </NavLink>
                         </li>
                     </ul>
@@ -36,3 +38,5 @@ export default function Navbar() {
         </div>
     );
 }
+
+export default Navbar;
