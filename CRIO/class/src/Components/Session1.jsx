@@ -1,9 +1,10 @@
 import React from "react";
 
 class SessionOne extends React.Component {
+  //  React.component is parent class
   //  it only requries when there is state is there in the class
   //  call the super
-  //  super is responsible for invoking the Parent class constructor
+  //  super is responsible for invoking the Parent(React.Component) class constructor
   constructor() {
     super();
     this.state = {
