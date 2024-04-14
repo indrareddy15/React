@@ -1,0 +1,5 @@
+button {
+  margin: 0 10px; /* This adds 10px of space to the left and right of each button */
+  width: 100px;
+  height: 50px;
+}

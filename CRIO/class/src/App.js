@@ -1,17 +1,12 @@
 import React from "react";
 import "./App.css";
-import Cnter from "./Components/test";
-// import SessionOne from "./Components/Session1";
-// import Counter from "./Components/Session2";
+import UserDashBoard from "./Components/UserDashBoard/UserDashBoard";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        {/* <h1>Welcome to React</h1> */}
-        {/* <SessionOne /> */}
-        {/* <Counter /> */}
-        <Cnter />
+        <UserDashBoard />
       </div>
     );
   }
