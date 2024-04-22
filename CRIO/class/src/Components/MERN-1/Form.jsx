@@ -6,7 +6,6 @@ class Form extends React.Component {
     this.state = {};
   }
 
-
   render() {
     return (
       <div>
