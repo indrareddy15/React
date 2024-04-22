@@ -1,31 +1,51 @@
-import React from "react";
+import React, { Component } from "react";
+import Photos from "./Photos";
 
-class Cnter extends React.Component {
-  constructor() {
-    super();
+class Album extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      count: 0,
+      album: [],
+      selectedAlbum: "",
     };
   }
-  handleIncreament = () => {
-    console.log("Increased", this.state.count);
-    this.setState((prev) => ({ count: prev.count + 1 }));
+
+  componentDidMount() {
+    this.handleFetchAlbum();
+  }
+
+  handleFetchAlbum = async () => {
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/albums"
+      );
+      const albumData = await response.json();
+      this.setState({ album: albumData });
+    } catch (error) {
+      console.error("Error fetching albums:", error);
+    }
   };
 
-  handleDecreament = () => {
-    console.log("Decreament", this.state.count);
-    this.setState((prev) => ({ count: prev.count - 1 }));
-  };
   render() {
+    const { album, selectedAlbum } = this.state;
     return (
-      <div>
-        <h1>Counter Application</h1>
-        <button onClick={this.handleIncreament}>+</button>
-        <span>{this.state.count}</span>
-        <button onClick={this.handleDecreament}>-</button>
-      </div>
+      <>
+        <div>
+          <h1>Albums</h1>
+          {album.map((album) => (
+            <p
+              onClick={() => this.setState({ selectedAlbum: album.id })}
+              style={{ cursor: "pointer" }}
+              key={album.id}
+            >
+              {album.title} {album.id}
+            </p>
+          ))}
+        </div>
+        <Photos albumId={selectedAlbum} />
+      </>
     );
   }
 }
 
-export default Cnter;
+export default Album;

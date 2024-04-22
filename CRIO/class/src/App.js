@@ -1,18 +1,20 @@
 import React from "react";
 import "./App.css";
+import Home from "./Components/Router/RHome";
+// import ClassAlbum from "./Components/ClassBased/Albums";
 // import DogPics from "./Components/DogPics/dogPics";
 // import FCmpnt1 from "./Components/Session5";
-import Album from "./Components/ExTest/Album";
+// import Album from "./Components/ExTest/Album";
 // import LifeCycle from "./Components/Session4";
 // import FCmpnt from "./Components/FCone";
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      showcomponent: true,
-    };
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     showcomponent: true,
+  //   };
+  // }
 
   render() {
     return (
@@ -30,7 +32,9 @@ class App extends React.Component {
         <FCmpnt diff={10} /> */}
         {/* <DogPics /> */}
         {/* <FCmpnt1 /> */}
-        <Album />
+        {/* <Album /> */}
+        {/* <ClassAlbum /> */}
+        <Home />
       </div>
     );
   }
