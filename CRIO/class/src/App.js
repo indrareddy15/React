@@ -1,11 +1,15 @@
 import React from "react";
 import "./App.css";
-import RouterApp from "./Components/ImpRouter/Router";
+import GenerateTable from "./Components/MERN-1/GenerateTable";
+// import Debounce from "./Components/MERN-1/Session7b";
+// import ExeUseRef from "./Components/MERN-1/Session7a";
 
 function App() {
   return (
     <div className="app">
-      <RouterApp />
+      {/* <ExeUseRef /> */}
+      {/* <Debounce /> */}
+      <GenerateTable />
     </div>
   );
 }
