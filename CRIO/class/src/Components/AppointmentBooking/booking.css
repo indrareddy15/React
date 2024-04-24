@@ -1,0 +1,95 @@
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  overflow: hidden;
+}
+
+.bkingSuccess {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Scheduling {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formData {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.name-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.selectBtn {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.radio_input {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.date_input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.cnfmBtn {
+  width: 150px;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cnfmBtn:hover {
+  background-color: #45a049;
+}
+
+.cnclBtn {
+  width: 150px;
+  background-color: #f44336;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cnclBtn:hover {
+  background-color: #d32f2f;
+}
