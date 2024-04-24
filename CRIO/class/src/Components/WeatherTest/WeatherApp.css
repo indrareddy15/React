@@ -1,0 +1,39 @@
+.weather-app {
+  font-family: Arial, sans-serif;
+}
+
+.app-header {
+  background-color: #2196f3;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.search-box {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.weather-card {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather-info div {
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}

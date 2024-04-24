@@ -65,3 +65,7 @@ const GenerateTable = () => {
 };
 
 export default GenerateTable;
+
+
+// const data = "Indra"
+// data ? "Indra" : "NA"
