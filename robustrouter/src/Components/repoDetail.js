@@ -73,7 +73,7 @@ const RepoDetail = () => {
             </div>
           </>
         ) : (
-          <h1>Loadin...</h1>
+          <h1>Loading...</h1>
         )}
       </div>
     </div>

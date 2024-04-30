@@ -12,8 +12,8 @@ const Login = ({ setIsLogged, setUsername }) => {
   const dummyUserObject = {
     // username: "Kolosafo",
     // password: "12345",
-    username: "testuser",
-    password: "testuser",
+    username: "routeuser",
+    password: "routeuser",
   };
   const handleLogin = (e) => {
     e.preventDefault();

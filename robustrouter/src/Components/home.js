@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./styles.css";
 import { Link } from "react-router-dom";
 
-const RepoList = () => {
+const Home = () => {
   //State management
   const [repos, setRepos] = useState(null);
   const gitRepos = async () => {
@@ -31,12 +31,18 @@ const RepoList = () => {
 
             <span className="repo-lang-span">Language: {repo.language}</span>
             <div>
-              By: <button className="repo-owner">{repo.owner.login}</button>
+              By:{" "}
+              <Link
+                to={`/users/user/${repo.owner.login}`}
+                className="repo-owner"
+              >
+                {repo.owner.login}
+              </Link>
             </div>
 
-            <button>
+            <Link to={`/repoDetails/${repo.name}/${repo.owner.login}`}>
               <button>View Repo</button>
-            </button>
+            </Link>
           </div>
         ))
       ) : (
@@ -47,4 +53,4 @@ const RepoList = () => {
   );
 };
 
-export default RepoList;
+export default Home;
