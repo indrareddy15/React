@@ -48,7 +48,6 @@ const Home = () => {
       ) : (
         <h1>Loading...</h1>
       )}
-      <Link to="/users">GO to Users page</Link>
     </div>
   );
 };
