@@ -2,13 +2,19 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/navbar";
 import { appRoute } from "./route";
-import { Suspense } from "react";
-import { HiMenuAlt1 } from "react-icons/hi";
+import React, { Suspense, useRef, useState } from "react";
 
 function App() {
+  const cartInitialItems = {
+    totalAmount: 0,
+    numberOfItems: 0,
+    cartItems: [],
+  };
+  const categoryRef = useRef();
+  const [cartItems, setCartItems] = useState(cartInitialItems);
   return (
     <div>
-      <Navbar />
+      <Navbar categoryRef={categoryRef} />
       <Suspense fallback={() => <h1>Loading...!</h1>}>
         <Routes>
           {appRoute.map((route) => {
@@ -18,7 +24,9 @@ function App() {
                 key={route.path}
                 exact
                 path={route.path}
-                element={<Component />}
+                element={
+                  <Component categoryRef={categoryRef} _cartItems={cartItems} />
+                }
               />
             );
           })}
