@@ -8,12 +8,18 @@ const Cart = ({ _cartItems }) => {
           _cartItems.cartItems.map((item) => {
             return (
               <div className="cart-list-cont" key={item.id}>
-                <img src={item.img} alt={item.productName} />
+                <img
+                  className="cart-img"
+                  src={item.img}
+                  alt={item.productName}
+                />
                 <div id="cart-text">
                   <button className="free-shipping">Free Shipping</button>
                   <h2 className="cart-item-h2">{item.productName}</h2>
-                  <h3 className="cart-item-h3">{item.price.toFixed(2)}</h3>
-                  <h1 className="cart-item-h1">{item.price * 1.2}</h1>
+                  <h3 className="cart-item-h3">
+                    {(item.price * 1.2).toFixed(2)}
+                  </h3>
+                  <h1 className="cart-item-h1">{item.price.toFixed(2)}</h1>
                   <h4 className="cart-item-h4">
                     {item.description.length > 200
                       ? `${item.description.substring(0, 200)}....`
@@ -27,6 +33,16 @@ const Cart = ({ _cartItems }) => {
           <h1>YOU HAVEN'T ADDED ANY ITEMS TO CART</h1>
         )}
       </div>
+      {_cartItems.cartItems.length > 0 && (
+        <div className="cart-summary-cont">
+          <h2>Total: ${_cartItems.totalAmount.toFixed(2)}</h2>
+          <h5>Shopping Cost: $0</h5>
+          <h5>Total Items: {_cartItems.numberOfItems}</h5>
+          <button style={{ alignSelf: "center", width: "100" }}>
+            Checkout
+          </button>
+        </div>
+      )}
     </div>
   );
 };

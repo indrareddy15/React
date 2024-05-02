@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Navbar = ({ cartItemsCount, isLogged, categoryRef }) => {
   const navigate = useNavigate();
 
-  const handleNavigateShop = () => {
+  const handleNavigateScroll = () => {
     navigate("/");
     setTimeout(() => {
       categoryRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -21,7 +21,7 @@ const Navbar = ({ cartItemsCount, isLogged, categoryRef }) => {
         </h2>
         <ul className="nav-ul">
           <Link to={"/products"}>Products</Link>
-          <span onClick={handleNavigateShop} className="about-span">
+          <span onClick={handleNavigateScroll} className="about-span">
             Shop
           </span>
           <Link to={"/about"}>About</Link>
@@ -31,7 +31,7 @@ const Navbar = ({ cartItemsCount, isLogged, categoryRef }) => {
       <div className="nav-cont-2">
         {!isLogged && <button className="login-nav">Login</button>}
         <AiOutlineSearch size={25} />
-        <a href="##" className="cart-icon-cont">
+        <Link to={"/cart"} className="cart-icon-cont">
           <span className="nav-cart-count">{cartItemsCount}</span>
           <HiShoppingCart
             size={25}
@@ -41,7 +41,7 @@ const Navbar = ({ cartItemsCount, isLogged, categoryRef }) => {
               marginBottom: "-5px",
             }}
           />
-        </a>
+        </Link>
       </div>
     </nav>
   );

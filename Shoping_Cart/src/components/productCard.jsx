@@ -9,6 +9,25 @@ const ProductCard = ({
   price,
   setCartItems,
 }) => {
+  const handleAddItemsToCart = () => {
+    setCartItems((initState) => {
+      return {
+        totalAmount: initState.totalAmount + price,
+        numberOfItems: initState.numberOfItems + 1,
+        cartItems: [
+          ...initState.cartItems,
+          {
+            id: id,
+            productName: productName,
+            description: description,
+            price: price,
+            img: img,
+          },
+        ],
+      };
+    });
+  };
+
   return (
     <div className="product-card">
       {rating > 3.9 ? <div className="badge">Hot</div> : null}
@@ -17,6 +36,7 @@ const ProductCard = ({
       </div>
       <div className="product-details">
         <span className="product-catagory">{categoryName}</span>
+
         <h4>
           <a href="##">{productName}</a>
         </h4>
@@ -33,27 +53,7 @@ const ProductCard = ({
             <a href="##">
               <i className="fa fa-heart"></i>
             </a>
-            <button
-              className="addCart-link"
-              onClick={() =>
-                setCartItems((initState) => {
-                  return {
-                    totalAmount: initState.totalAmount + price,
-                    numberOfItems: initState.numberOfItems + 1,
-                    cartItems: [
-                      ...initState.cartItems,
-                      {
-                        id: id,
-                        productName: productName,
-                        description: description,
-                        price: price,
-                        img: img,
-                      },
-                    ],
-                  };
-                })
-              }
-            >
+            <button className="addCart-link" onClick={handleAddItemsToCart}>
               Add To Cart
             </button>
           </div>
