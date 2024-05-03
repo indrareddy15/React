@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import SearchDebounce from "./Components/MERN-1/Debounce";
+// import SearchDebounce from "./Components/MERN-1/Debounce";
+import WeatherApp from "./Components/WeatherApp/weatherapp";
 // import UserApp from "./Components/SalesDashBoard/DashBoard";
 // import WeatherApp from "./Components/WeatherTest/Weather";
 // import BookAppointment from "./Components/AppointmentBooking/Booking";
@@ -16,8 +17,9 @@ function App() {
       {/* <GenerateTable /> */}
       {/* <BookAppointment /> */}
       {/* <WeatherApp /> */}
-      <SearchDebounce />
+      {/* <SearchDebounce /> */}
       {/* <UserApp /> */}
+      <WeatherApp />
     </div>
   );
 }

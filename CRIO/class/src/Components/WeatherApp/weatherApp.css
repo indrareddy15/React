@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.navbar {
+  background-color: #4caf50;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar h1 {
+  color: white;
+  margin: 0;
+}
+
+.content {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.search-box {
+  margin-bottom: 20px;
+}
+
+.red {
+  color: red;
+}
+
+.weather-card {
+  width: 400px;
+  height: auto;
+  margin: auto;
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.value {
+  color: #4caf50;
+}
