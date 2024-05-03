@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Cart = ({ _cartItems }) => {
+  const navigate = useNavigate();
   return (
     <div className="cart-cont">
       <div className="cart-wrapper">
@@ -38,7 +40,10 @@ const Cart = ({ _cartItems }) => {
           <h2>Total: ${_cartItems.totalAmount.toFixed(2)}</h2>
           <h5>Shopping Cost: $0</h5>
           <h5>Total Items: {_cartItems.numberOfItems}</h5>
-          <button style={{ alignSelf: "center", width: "100" }}>
+          <button
+            style={{ alignSelf: "center", width: "100" }}
+            onClick={() => navigate("/checkout")}
+          >
             Checkout
           </button>
         </div>

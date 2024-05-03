@@ -1,8 +1,9 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/navbar";
 import { appRoute } from "./route";
 import React, { Suspense, useRef, useState } from "react";
+import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 function App() {
   const cartInitialItems = {
@@ -12,33 +13,61 @@ function App() {
   };
   const categoryRef = useRef();
   const [cartItems, setCartItems] = useState(cartInitialItems);
+  const [user, setUser] = useState({});
+  const [isLogged, setIsLogged] = useState(false);
+
+  const location = useLocation();
   return (
     <div>
       <Navbar
         categoryRef={categoryRef}
         cartItemsCount={cartItems.numberOfItems}
+        isLogged={isLogged}
       />
-      <Suspense fallback={() => <h1>Loading...!</h1>}>
-        <Routes>
-          {appRoute.map((route) => {
-            const Component = route.component;
-            return (
-              <Route
-                key={route.path}
-                exact
-                path={route.path}
-                element={
-                  <Component
-                    categoryRef={categoryRef}
-                    _cartItems={cartItems}
-                    setCartItems={setCartItems}
-                  />
+      <SwitchTransition component={null}>
+        <CSSTransition
+          key={location.pathname}
+          classNames="fade"
+          timeout={300}
+          unmountOnExit
+        >
+          <Suspense fallback={<h1>Loading...!</h1>}>
+            <Routes Location={location}>
+              {appRoute.map((route) => {
+                if (route.requireAuth && !isLogged) {
+                  return (
+                    <Route
+                      key={route.path}
+                      exact
+                      path={route.path}
+                      element={<Navigate replace to={"/login"} />}
+                    />
+                  );
+                } else {
+                  return (
+                    <Route
+                      key={route.path}
+                      exact
+                      path={route.path}
+                      element={
+                        <route.component
+                          categoryRef={categoryRef}
+                          _cartItems={cartItems}
+                          setCartItems={setCartItems}
+                          setUser={setUser}
+                          setIsLogged={setIsLogged}
+                          isLogged={isLogged}
+                          user={user}
+                        />
+                      }
+                    />
+                  );
                 }
-              />
-            );
-          })}
-        </Routes>
-      </Suspense>
+              })}
+            </Routes>
+          </Suspense>
+        </CSSTransition>
+      </SwitchTransition>
     </div>
   );
 }

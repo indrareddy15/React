@@ -27,6 +27,19 @@ export const fetchCategoryProducts = async (_category) => {
     return response.data;
   } catch (error) {
     console.log(error);
-    return [];
+    throw error;
+  }
+};
+
+export const authenticateUser = async (email, password) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/users`);
+    const authenticateUserLogin = response.data.find(
+      (user) => user.email === email && user.password === password
+    );
+    return authenticateUserLogin;
+  } catch (error) {
+    console.error("Error during authentication:", error);
+    throw error;
   }
 };
