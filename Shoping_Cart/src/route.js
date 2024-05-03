@@ -1,10 +1,9 @@
 import React, { lazy } from "react";
 import Home from "./pages/Home";
 
-
-
 const Products = lazy(() => import("./pages/Products"));
 const Cart = lazy(() => import("./pages/Cart"));
+const Checkout = lazy(() => import("./pages/Checkout"));
 
 export const appRoute = [
   {
@@ -27,5 +26,10 @@ export const appRoute = [
     path: "/cart",
     component: Cart,
     requireAuth: false,
+  },
+  {
+    path: "/checkout",
+    component: Checkout,
+    requireAuth: true,
   },
 ];
