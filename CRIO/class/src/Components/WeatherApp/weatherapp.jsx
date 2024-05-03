@@ -8,11 +8,13 @@ import { useState } from "react";
 import Grid from "@mui/material/Grid";
 import axios from "axios";
 import "./weatherApp.css";
+import { API_KEY } from "./base";
 
 const WeatherApp = () => {
   const [location, setLocation] = useState("");
   const [found, setFound] = useState(false);
-  const [errorFound, setErrorFound] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
   const [report, setReport] = useState({
     place: "",
     country: "",
@@ -28,13 +30,13 @@ const WeatherApp = () => {
   async function getApiCall(place) {
     try {
       const response = await axios.get(
-        `https://api.weatherapi.com/v1/current.json?key=d98b9f78849e4d68ab5134130232609&q=${place}&aqi=no`
+        `https://api.weatherapi.com/v1/current.json?key=${API_KEY}=${place}&aqi=no`
       );
       const data = response.data;
       console.log(data);
       if (data) {
         setFound(true);
-        setErrorFound(false);
+        setErrorMsg(false);
         setReport({
           place: data.location.name,
           country: data.location.country,
@@ -48,7 +50,7 @@ const WeatherApp = () => {
         });
       }
     } catch (e) {
-      setErrorFound(true);
+      setErrorMsg(true);
     }
   }
 
@@ -85,7 +87,7 @@ const WeatherApp = () => {
             if (e.key === "Enter") getApiCall(location);
           }}
         />
-        {errorFound ? (
+        {errorMsg ? (
           <h2 className="red">No matching location found.</h2>
         ) : found ? (
           <h2>

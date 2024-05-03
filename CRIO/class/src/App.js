@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 // import SearchDebounce from "./Components/MERN-1/Debounce";
-// import WeatherApp from "./Components/WeatherApp/weatherapp";
-import ParentComponent from "./Components/MERN-1/PropLift";
+import WeatherApp from "./Components/WeatherApp/weatherapp";
+// import ParentComponent from "./Components/MERN-1/PropLift";
 // import UserApp from "./Components/SalesDashBoard/DashBoard";
 // import WeatherApp from "./Components/WeatherTest/Weather";
 // import BookAppointment from "./Components/AppointmentBooking/Booking";
@@ -20,8 +20,8 @@ function App() {
       {/* <WeatherApp /> */}
       {/* <SearchDebounce /> */}
       {/* <UserApp /> */}
-      {/* <WeatherApp /> */}
-      <ParentComponent />
+      <WeatherApp />
+      {/* <ParentComponent /> */}
     </div>
   );
 }
