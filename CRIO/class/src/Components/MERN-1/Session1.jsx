@@ -2,7 +2,8 @@ import React from "react";
 
 class SessionOne extends React.Component {
   //  React.component is parent class
-  //  it only requries when there is state is there in the class
+
+  //  constructor only requries when there is state is there in the class
   //  call the super
   //  super is responsible for invoking the Parent(React.Component) class constructor
   constructor() {
@@ -12,7 +13,7 @@ class SessionOne extends React.Component {
     };
   }
   render() {
-    //  it is function used to display UI with help  return the jsx
+    //  render function used to display UI with help  return the jsx
     //  jsx is js code template which converts the html syntax to react function call
     //  React Function call helps to construct the VDOM
     //  VDOM will updated the actual DOM then displayes in UI
@@ -22,6 +23,16 @@ class SessionOne extends React.Component {
     //  node: "div"
     //  children: []
     //  }
+    // JSX code
+    // const element = <h1>Hello, world!</h1>;
+
+    // After Babel transformation
+    // const element = React.createElement(
+    //   'h1',
+    //   null,
+    //   'Hello, world!'
+    // );
+
     return (
       <div>
         <h1>Welcome to Class Component {this.state.name}</h1>
@@ -31,3 +42,4 @@ class SessionOne extends React.Component {
 }
 
 export default SessionOne;
+
