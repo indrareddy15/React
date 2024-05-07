@@ -13,7 +13,7 @@ class SessionOne extends React.Component {
     };
   }
   render() {
-    //  render function used to display UI with help  return the jsx
+    //  render method used to display UI with help  return the jsx
     //  jsx is js code template which converts the html syntax to react function call
     //  React Function call helps to construct the VDOM
     //  VDOM will updated the actual DOM then displayes in UI

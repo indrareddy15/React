@@ -51,7 +51,55 @@
     - Virtual DOM: It is a lightweight copy of the actual DOM which makes DOM manipulation easier.
 
 ## 6. How do you create component in React
-    
-    As we there are ttwo types of the components in React
-        - Class-based: The class components are a little more complex than the functional components. We can pass data from one class component to another class component. Class based component start with key word called Class
-        - Functional-based (the most recent one).
+
+    As we there are two types of the components in React
+        - **Class-based**: The class components are a little more complex than the functional components. It requires large boilerplate code. Data can be passed from one class component to another class component.
+                            Class based components mainly work in Life Cycle Methods 
+            - Class-based components start with the keyword "class" and extend to `React.Component`. `React.Component` is the parent class from the React library. There are methods associated with class-based components:
+
+            - Constructor: The constructor method is only required when there is state in the class. It is called when an instance of the component is created.
+
+            - Render: The render method is used to display UI by returning JSX. JSX is JavaScript code template which converts the HTML syntax to React function call. React function calls help to construct the       Virtual DOM, which updates the actual DOM and displays it in the UI.
+
+            example this how react function call help to create a virtualDOM
+            JSX code
+            const element = <h1>Hello, world!</h1>;
+            After Babel transformation
+                const element = React.createElement(
+                    'h1',
+                    null,
+                    'Hello, world!'
+                );
+
+        - **Functional-based** : You declare a functional component using a JavaScript function. This function returns JSX, JSX stands for JavaScript XML. It allows you to write HTML-like syntax within your JavaScript code.SX makes your components more readable and maintainable
+
+## 7. How do browsers read JSX
+
+    Browsers are not capable of reading JSX directly and only can understand and read pure JavaScript [babel library is used to convert any react code into Java Script that render in the UI]
+    The web browsers read JSX with the help of a transpiler. Transpilers are used to convert JSX into JavaScript. The transpiler used is called Babel
+
+## 8. What are States and Props
+
+    - States are more likly a Variable. States are passed with in the component only and States can be modified
+    - Props are used to pass data from one component to another mostly props are passed as function argument. Props cannot be modified(immutable)
+    - In class based component  both state and props are object => States  act a local variable to that particular component 
+    - For using states in class based component we need to initlize the constructor method and super keyword bcz we are extending from React.Component
+
+    - In functional component States depends on how you define Props can be used with state and functional components.
+
+## 9. What is JSX?
+
+    - JSX stands for JavaScript XML. It is templating language similar to HTML. It allows us to directly write HTML in React (within JavaScript code)
+    - which converts into react functional call...!  => How..?  ==> babel transplier library is used to convert any JSX code into Java Script that render in the UI
+    - Once these function are called help to build the Virtual Dom then rendring happens during rendering RECONCILIATION happens and Diffing Algo takes place
+
+## 10. What are Life Cycle Methods in React
+
+    - Life cycle methods how the life cycle of the component is evolved
+    - Three Phases of life cycle methods are Mounting Phase, Updation Phase, and Destroying Phase(Unmounting Phase)
+    - **Mounting Phase** : there are methods associated with the mounting phase
+        - constructor():  This method is called before the component is mounted. It is used for initializing State and binding the event handlers in order to avoid the side effects in this method.
+        - render(): This method is mandatory and is responsible for rendering the component's UI based on its current state and props. bcz it return the JSX
+        - componentDidMount(): This method gets excueted when the component is loaded into the DOM it will get triggred after the first invokation of render method
+                                componentDidMount it will only render once in it's entire life cycle
+
