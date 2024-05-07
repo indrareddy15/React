@@ -1,6 +1,9 @@
 import React from "react";
 
 class Counter extends React.Component {
+  // When the component is called it will check the constructor method is there or not
+  // if there component will invoke the constructor method it will happen only once in entire life cycle method
+  // next invocation is render method and then life cycle is invoked 
   constructor() {
     super();
     this.state = {
