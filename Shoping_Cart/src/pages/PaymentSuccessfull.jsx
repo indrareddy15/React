@@ -11,7 +11,6 @@ const PaymentSuccess = () => {
   );
 };
 
-// Inline styles
 const styles = {
   container: {
     display: "flex",
