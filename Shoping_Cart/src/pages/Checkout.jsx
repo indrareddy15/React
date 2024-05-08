@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Checkout = ({ user, _cartItems }) => {
   return (
@@ -20,9 +21,11 @@ const Checkout = ({ user, _cartItems }) => {
             <span>
               {user.name.firstname} {user.name.lastname}
             </span>
-            <button style={{ alignSelf: "center", width: "100" }}>
-              Pay Now
-            </button>
+            <Link to="/payment">
+              <button style={{ alignSelf: "center", width: "100" }}>
+                Pay Now
+              </button>
+            </Link>
           </h5>
         </div>
       ) : (

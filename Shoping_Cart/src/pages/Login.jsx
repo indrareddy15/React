@@ -8,8 +8,8 @@ const Login = ({ setUser, setIsLogged }) => {
   const [loading, setLoading] = useState(false);
 
   const handleLogin = (e) => {
-    setLoading(true);
     e.preventDefault();
+    setLoading(true);
     const getUser = async () => {
       try {
         const response = await authenticateUser(email, password);
@@ -17,20 +17,21 @@ const Login = ({ setUser, setIsLogged }) => {
         if (response) {
           setUser(response);
           setIsLogged(true);
-          setLoading(false);
         } else {
           setErrorMsg("Invalid Email or Password");
         }
       } catch (error) {
         console.error("Error during authentication:", error);
         setErrorMsg("An error occurred during authentication");
+      } finally {
+        setLoading(false);
       }
     };
     getUser();
   };
 
   return (
-    <form className="login-form">
+    <form className="login-form" onSubmit={handleLogin}>
       <span className="error-span">{errorMsg}</span>
       <label htmlFor="email" className="login-label">
         Email
@@ -55,9 +56,7 @@ const Login = ({ setUser, setIsLogged }) => {
         onChange={(e) => setPassword(e.target.value)}
         disabled={loading ? true : false}
       />
-      <button type="submit" onClick={handleLogin}>
-        {!loading ? "Submit" : "Loading...."}
-      </button>
+      <button type="submit">{!loading ? "Submit" : "Loading...."}</button>
     </form>
   );
 };
