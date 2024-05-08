@@ -1,7 +1,9 @@
 import React from "react";
 import "./App.css";
+// import UseRefEx from "./Components/UseRefEx/useRefEx";
+import StopWatch from "./Components/UseRefEx/StopWatch";
 // import SearchDebounce from "./Components/MERN-1/Debounce";
-import WeatherApp from "./Components/WeatherApp/weatherapp";
+// import WeatherApp from "./Components/WeatherApp/weatherapp";
 // import ParentComponent from "./Components/MERN-1/PropLift";
 // import UserApp from "./Components/SalesDashBoard/DashBoard";
 // import WeatherApp from "./Components/WeatherTest/Weather";
@@ -20,8 +22,10 @@ function App() {
       {/* <WeatherApp /> */}
       {/* <SearchDebounce /> */}
       {/* <UserApp /> */}
-      <WeatherApp />
+      {/* <WeatherApp /> */}
       {/* <ParentComponent /> */}
+      {/* <UseRefEx /> */}
+      <StopWatch />
     </div>
   );
 }
