@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import TaskManager from "./Components/TaskMang/TaskManager";
+import RespSideBar from "./Components/SideBar/SideBar";
+// import TaskManager from "./Components/TaskMang/TaskManager";
 // import UseRefEx from "./Components/UseRefEx/useRefEx";
 // import StopWatch from "./Components/UseRefEx/StopWatch";
 // import SearchDebounce from "./Components/MERN-1/Debounce";
@@ -27,7 +28,8 @@ function App() {
       {/* <ParentComponent /> */}
       {/* <UseRefEx /> */}
       {/* <StopWatch /> */}
-      <TaskManager />
+      {/* <TaskManager /> */}
+      <RespSideBar />
     </div>
   );
 }
