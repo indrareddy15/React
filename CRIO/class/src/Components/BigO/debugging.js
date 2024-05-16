@@ -94,11 +94,11 @@ function findPeaks(arr) {
   let N = arr.length;
 
   for (let i = 0; i < N; i++) {
-    if (i === 0 && arr[i] > arr[i+1]) {
+    if (i === 0 && arr[i] > arr[i + 1]) {
       peaks.push(arr[i]);
-    } else if (i === N-1 && arr[i] > arr[i-1]) {
+    } else if (i === N - 1 && arr[i] > arr[i - 1]) {
       peaks.push(arr[i]);
-    } else if (arr[i] > arr[i-1] && arr[i] > arr[i+1]) {
+    } else if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
       peaks.push(arr[i]);
     }
   }
@@ -108,3 +108,52 @@ function findPeaks(arr) {
 
 let data1 = findPeaks([4, 2, 3, 1, 5, 6, 4]);
 console.log(data1); // Outputs: [ 4, 3, 6 ]
+
+function test(N, M) {
+  for (let i = 0; i < N; i++) {
+    for (let j = 0; j < M; j++) {
+      console.log(i);
+    }
+  }
+
+  // for (let i = 0; i < N; i++) {
+  //   for (let j = 0; j < M; j++) {
+  //     console.log(i);
+  //   }
+  // }
+}
+
+test(10, 10);
+
+function extractNum(N, arr) {
+  let newArr = [];
+  for (let str of arr) {
+    for (let i = 0; i < str.length; i++) {
+      if (str.charAt(i) >= "0" || str.charAt(i) <= "9") {
+        newArr.push(str);
+        break;
+      }
+    }
+  }
+  return newArr;
+}
+let data2 = extractNum(["a", 3, "long", 17, " crio", "dsa", 100, 20]);
+console.log(data2);
+
+// function extractNum(N, arr) {
+//   let newArr = [];
+//   for (let str of arr) {
+//     let flag = true;
+//     for (let i = 0; i < str.length; i++) {
+//       if (str.charAt(i) === "-") {
+//         if (i !== 0 && str.length === 1) {
+//           flag = false;
+//           break;
+//         }
+//       } else if (str.charAt(i) >= 0 || str.charAt(i) <= 9) {
+//         flag = false;
+//         break;
+//       }
+//     }
+//   }
+// }
