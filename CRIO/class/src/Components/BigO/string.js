@@ -75,8 +75,6 @@ function capLets(sentence) {
 //   console.log("false");
 // }
 
-"use strict";
-
 process.stdin.resume();
 process.stdin.setEncoding("utf-8");
 
@@ -152,7 +150,7 @@ function captlizeWords(word) {
 
 
 // TODO: Implement this method
-function capitaliseBasic(paragraph) {
+function capitaliseBasics(paragraph) {
   let wordArr = paragraph.split(" ");
   for (let i = 0; i < wordArr.length; i++) {
     wordArr[i] = captlizeWords(wordArr[i]);
@@ -160,7 +158,7 @@ function capitaliseBasic(paragraph) {
   return wordArr.join(" ");
 }
 
-function capitaliseBasic(paragraph) {
+function capitaliseBasices(paragraph) {
   let wordArr = paragraph.split(" ");
   console.log(wordArr);
   for (let i = 0; i < wordArr.length; i++) {
