@@ -12,7 +12,7 @@ console.log(data2);
 let data3 = str.lastIndexOf("o");
 console.log(data3);
 
-let data4 = str.includes()
+let data4 = str.includes();
 
 // function capLet(word) {
 //   let cap = word[0].toUpperCase() + word.slice(1).toLowerCase();
@@ -21,16 +21,15 @@ let data4 = str.includes()
 // }
 
 function capLet(word) {
-   let upper = word[0].toUpperCase();
-   for (let i = 1; i < word.length; i++) {
-     upper += word[i];
-   }
-   return upper;
+  let upper = word[0].toUpperCase();
+  for (let i = 1; i < word.length; i++) {
+    upper += word[i];
+  }
+  return upper;
 }
 
 let cdata = capLet("indra expected because it's trying to iterate over");
 console.log(cdata);
-
 
 function capLets(sentence) {
   let words = sentence.split(" ");
@@ -44,7 +43,6 @@ function capLets(sentence) {
 // let cdata1 = capLets("indra expected because it's trying to iterate over");
 // console.log(cdata1); // Indra Expected Because It's Trying To Iterate Over
 
-
 // function captlizeWord(word) {
 //   return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 // }
@@ -52,7 +50,7 @@ function capLets(sentence) {
 // // TODO: Implement this method
 // function capitaliseBasic(paragraph) {
 //     let wordArr = paragraph.split(" ");
-    
+
 //   for (let i = 0; i < wordArr.length; i++) {
 //     wordArr[i] = captlizeWord(wordArr[i]);
 //   }
@@ -148,7 +146,6 @@ function captlizeWords(word) {
   return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 }
 
-
 // TODO: Implement this method
 function capitaliseBasics(paragraph) {
   let wordArr = paragraph.split(" ");
@@ -171,3 +168,16 @@ let datas = capitaliseBasic(
   "Riwuria Fcnejkgsnj Xjiojbiruudhr Elrjsmo Vhu Nabchsdghsj Dshiufeu Dhdhhh Nfhv Kkslcwsm Ajsndjw"
 );
 console.log(datas);
+
+function abc(arr) {
+  let numArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "number") {
+      numArr.push(arr[i]);
+    }
+  }
+  return numArr;
+}
+
+let xyz = abc(["a", 1, "b", 2, "c", "d", 3, 4, "e"]);
+console.log(xyz);
