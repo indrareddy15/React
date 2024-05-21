@@ -39,3 +39,34 @@ let magic = magicSquare([
 console.log(magic ? "Magic Square" : "Not a Magic Square");
 
 
+// Compare the matrix weather Same or not
+function sameMatrix(matA, matB) {
+  for (let i = 0; i < matA.length; i++) {
+    for (let j = 0; j < matB.length; j++) {
+      if (matA[i][j] !== matB[i][j]) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+let A = [
+  [1, 2, 3, 4],
+  [1, 2, 3, 4],
+  [1, 2, 3, 4],
+  [1, 2, 3, 4],
+];
+
+let B = [
+  [1, 2, 3, 4],
+  [1, 2, 3, 4],
+  [1, 2, 3, 4],
+  [1, 2, 3, 4],
+];
+
+if (sameMatrix(A, B)) {
+  console.log("\nMatrices are equal");
+} else {
+  console.log("\nMatrices are not equal");
+}
