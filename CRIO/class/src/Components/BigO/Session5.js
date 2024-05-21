@@ -102,9 +102,94 @@ iterateMatrixs([
 ]);
 
 function iterateSumRow(matrix, rowNo) {
-  let sum = 0
+  let sum = 0;
   for (let i = 0; i < matrix[rowNo].length; i++) {
-    sum+= matrix[rowNo][i]
+    sum += matrix[rowNo][i];
   }
-  return sum
+  return sum;
 }
+////////////////-------------------------------------------------------
+
+function iteratingMatrix(matrix) {
+  for (let i = 0; i < matrix.length; i++) {
+    // T.C is O(N * M) bc
+    for (let j = 0; j < matrix[i]; j++) {
+      console.log(matrix[i][j]);
+    }
+  }
+}
+
+console.log(
+  iteratingMatrix([
+    [4, 9, 2],
+    [3, 5, 7],
+    [8, 1, 6],
+  ])
+);
+
+function iteratingRow(matrix, rowNo) {
+  for (let i = 0; i < matrix.length; i++) {
+    console.log(matrix[rowNo]);
+  }
+}
+
+console.log(
+  iteratingRow(
+    [
+      [4, 9, 2],
+      [3, 5, 7],
+      [8, 1, 6],
+    ],
+    0
+  )
+);
+
+function iteratingCols(matrix, colNo) {
+  for (let i = 0; i < matrix.length; i++) {
+    console.log(matrix[i][colNo]);
+  }
+}
+
+console.log(
+  iteratingCols(
+    [
+      [4, 9, 2],
+      [3, 5, 7],
+      [8, 1, 6],
+    ],
+    0
+  )
+);
+
+function iteratingDia1(matrix) {
+  for (let i = 0; i < matrix.length; i++) {
+    console.log(matrix[i][i]);
+  }
+}
+console.log(
+  iteratingDia1([
+    [4, 9, 2],
+    [3, 5, 7],
+    [8, 1, 6],
+  ])
+);
+
+function iteratingDia2(matrix) {
+  let col = matrix.length - 1;
+  for (let i = 0; i < matrix.length; i++) {
+    console.log(matrix[i][col])
+    col--
+  }
+}
+
+console.log(
+  iteratingDia2([
+    [4, 9, 2],
+    [3, 5, 7],
+    [8, 1, 6],
+  ])
+);
+
+
+
+
