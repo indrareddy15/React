@@ -7,7 +7,7 @@
 
 ## 2. Why React
 
-    Start with drawbacks like When dealing with Javascript it contain large boiler plate code moduler system designing of the components will become difficult
+    Start with drawbacks like When dealing with Javascript it contain large boiler plate code modular system designing of the components will become difficult
     React address major issue of reloading by using Virtual DOM
     - Ease of maintenance.
     - Performance improvements.
@@ -20,7 +20,7 @@
 
     ### Note:
     - JQuery use Direct access of DOM it is most expensive to handle
-    - Anugular is Framework that means it has large ecosystem every things comes under single package including Data manipulation
+    - Angular is Framework that means it has large ecosystem every things comes under single package including Data manipulation
 
 ## 3. Explain the concept of virtual DOM
 
@@ -37,8 +37,8 @@
 
 ## 4. What are Components in React
 
-    - In Vennila JavaScript creating a resuable components is very difficult.
-    - components are small snnipets of code put together to make APP easier
+    - In Vanilla JavaScript creating a reusable components is very difficult.
+    - components are small snippets of code put together to make APP easier
     - Component is one of the core building blocks of React
     - React supports two types of architecture:
         - **Class-based**.
@@ -78,23 +78,23 @@
 
 ## 8. What are States and Props
 
-    - States are more likly a Variable. States are passed with in the component only and States can be modified
+    - States are more likely a Variable. States are passed with in the component only and States can be modified
     - Props are used to pass data from one component to another mostly props are passed as function argument. Props cannot be modified(immutable)
     - In class based component  both state and props are object => States  act a local variable to that particular component
-    - For using states in class based component we need to initlize the constructor method and super keyword bcz we are extending from React.Component
+    - For using states in class based component we need to initialize the constructor method and super keyword bcz we are extending from React.Component
 
     - In functional component States depends on how you define Props can be used with state and functional components.
 
 ## 9. What is JSX?
 
-    - JSX stands for JavaScript XML. It is templating language similar to HTML. It allows us to directly write HTML in React (within JavaScript code)
-    - which converts into react functional call...!  => How..?  ==> babel transplier library is used to convert any JSX code into Java Script that render in the UI
-    - Once these function are called help to build the Virtual Dom then rendring happens during rendering RECONCILIATION happens and Diffing Algo takes place
+    - JSX stands for JavaScript XML. It is template language similar to HTML. It allows us to directly write HTML in React (within JavaScript code)
+    - which converts into react functional call...!  => How..?  ==> babel transpiler library is used to convert any JSX code into Java Script that render in the UI
+    - Once these function are called help to build the Virtual Dom then rendering happens during rendering RECONCILIATION happens and Diffing Algo takes place
 
 ## 10. What are Life Cycle Methods in React
 
     - Life cycle methods how the life cycle of the component is evolved
-    - Three Phases of life cycle methods are Mounting Phase, Updation Phase, and Destroying Phase(Unmounting Phase)
+    - Three Phases of life cycle methods are Mounting Phase, Updating Phase, and Destroying Phase(Unmounting Phase)
 
     - **Mounting Phase** : there are methods associated with the mounting phase
 
@@ -102,16 +102,16 @@
 
         - render(): This method is mandatory and is responsible for rendering the component's UI based on its current state and props. bcz it return the JSX
 
-        - componentDidMount(): This method gets excueted when the component is loaded into the DOM it will get triggred after the first invokation of render method componentDidMount it will only render once in it's entire life cycle.It is commonly used to perform tasks such as fetching data from an API or setting up
+        - componentDidMount(): This method gets executed when the component is loaded into the DOM it will get triggered after the first invocation of render method componentDidMount it will only render once in it's entire life cycle.It is commonly used to perform tasks such as fetching data from an API or setting up
 
-    - **Updation Phase** :
+    - **Updating Phase** :
 
         - componentDidUpdate():This method is triggered whenever there are changes to the state or props. React initiates a re-render, and before this re-render occurs, this method has access to the previous state (prevState) and previous props (prevProps). Compare current props and state with prevState and prevProps if it return true then the component will re-render false other
 
     - **Unmounting Phase** :
 
         -This method is called immediately before a component is unmounted and destroyed. It is used to perform cleanup tasks such as removing event listeners or canceling subscriptions.
-        {this will happen only with condiional rendering}
+        {this will happen only with conditional rendering}
 
 ## 11. What are keys in React
 
@@ -125,16 +125,16 @@
 ## 13. What are hooks in React
 
     - Hooks are used in functional Components
-    - Major problem in class based components. sharing Bussiness logic across different component and Higher order component (HOC) passing one component to other component that return new component is not scalable
-    - Hooks are the Native React API's(functions) which interate with different asscepts of React. Hooks are the independent that are shared we can resue our business logic by converting hook and resue them in the component
+    - Major problem in class based components. sharing Business logic across different component and Higher order component (HOC) passing one component to other component that return new component is not scalable
+    - Hooks are the Native React API's(functions) which interact with different aspects of React. Hooks are the independent that are shared we can reuse our business logic by converting hook and reuse them in the component
     - If we want use hook we need prefix like "useXXX" and some the important hooks are "useState" , "useEffect" ect..
     - For Example: if we want to create a custom hook like "**useWindowResizer**" that allows you to track and resize the window size and determine the screen size based on the width:
 
 ## 14. How do you handle events in React
 
-    - Event handling work very different in different browsers(FireFox, Safari) React team came with new system in React that is Synthice events
-    - Synthetic events in React have the same interface as acutal DOM events
-    - Synthice events are new way of handling the events in react like event object is attached to root element and this root element will caputre then it will check what is happening in the react applicaation {It will capture with the help of event bubbling}
+    - Event handling work very different in different browsers(FireFox, Safari) React team came with new system in React that is Synthetic events
+    - Synthetic events in React have the same interface as actual DOM events
+    - Synthetic Events are new way of handling the events in react like event object is attached to root element and this root element will caputre then it will check what is happening in the react application {It will capture with the help of event bubbling}
 
 ## 15. What is useState in React and How it is used in React
 
@@ -142,7 +142,7 @@
     - useState is function that return the array of two items the first one State in which is used as variable and the second one is Updater function which update the that particular State {if we want use default value we use directly i.e useState("DefaultValue")}
     - if we want to update the state there are two ways
 
-        - First way is by using call back it will accept the readmate value
+        - First way is by using call back it will accept the read mate(sample) value
         - When updating state with a callback function, you can access the previous state (also known as the current state) as an argument in the callback.
         - This method ensures that you're always working with the latest state, even if state updates are batched or asynchronous.
         - For Example ==> setCount(prevCount => prevCount + 1); // Using callback to update state
@@ -157,11 +157,11 @@
 
     - useEffect is one of the most useful hook in React which comes from react native API. useEffect will perform side Effects of the Application it similar to Life cycle method in class based component.
     - useEffect will accept two parameters on is callback function and other one is dependency array ==> useEffect( () => callback {function}, [dependency array])
-    - useEffect will excutes asynchrons functions like API calls, functional calls, Network calls
-    - useEffect will accepts the callback and get excueted when the useEffect will runs
-    - useEffect will run after the first return of the JSX. It will atleast run once in a functional component. useEffect will accept two parameters on is callback function and other one is dependency array. if dependency array is not there the useEffect will runs continuously when every state or prop changes
-    dependency array will tell when to excuete after the excueting of the atleast once
-    - After the first return it will get excueted post that based on what is there in the dependency array("["State" or "Prop"]") that will get excueted
+    - useEffect will executes asynchronous functions like API calls, functional calls, Network calls
+    - useEffect will accepts the callback and get executed when the useEffect will runs
+    - useEffect will run after the first return of the JSX. It will at least run once in a functional component. useEffect will accept two parameters on is callback function and other one is dependency array. if dependency array is not there the useEffect will runs continuously when every state or prop changes
+    dependency array will tell when to execute after the executing of the at least once
+    - After the first return it will get executed post that based on what is there in the dependency array("["State" or "Prop"]") that will get executed
     - If Dependency Array ("[ ]") is empty State or Prop is get trapped bcz there when State or Prop goes into array there will be no items in the array then useEffect will run only once
-    - if Dependency Array("["State" or "Prop"]") has a value then it will check State or Prop is updated then useEffect wil get triggred again
-    - Now useEffect will also have return function which is called as clean up function. this is used when the component get removed then return statement will get excueted this is becasue to avoid memory leaks
+    - if Dependency Array("["State" or "Prop"]") has a value then it will check State or Prop is updated then useEffect wil get triggered again
+    - Now useEffect will also have return function which is called as clean up function. this is used when the component get removed then return statement will get executed this is because to avoid memory leaks
