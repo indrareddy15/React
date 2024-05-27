@@ -195,7 +195,7 @@ class Solutions {
         left++;
       }
 
-      if (sum == s) {
+      if (sum === s) {
         result.push(left + 1);
         result.push(right + 1);
         return result;
