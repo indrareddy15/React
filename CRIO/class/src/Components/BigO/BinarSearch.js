@@ -1,0 +1,95 @@
+function binarySearch(arr, target) {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+
+    if (arr[mid] === target) {
+      return mid;
+    }
+
+    if (arr[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+  return -1;
+}
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const toFind = 7;
+let data = binarySearch(arr, toFind);
+console.log(data);
+
+function reverseString(str) {
+  // return str.split(" ").reverse().join(" ");
+
+  // to remove the extra spaces then we need use filter method
+  let arr = str.split(" ");
+  let filterArr = arr.filter((i) => i.trim() !== "");
+  return filterArr.reverse().join(" ");
+}
+
+let revrse = reverseString("Indra Reddy Ganta");
+console.log(revrse);
+
+function reverseWord(str) {
+  let words = str.split(" ");
+  let reversedWords = words.map((word) => word.split("").reverse().join(""));
+  return reversedWords.join(" ");
+}
+
+let revrseWrd = reverseWord("Indra Reddy Ganta");
+console.log(revrseWrd);
+
+function searchingTarget(matrix, target) {
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === target) {
+        console.log("Found");
+        return { i, j };
+      }
+    }
+  }
+  return -1;
+}
+
+let mat = [
+  [1, 2, 4],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+let tar = 11;
+
+let srMat = searchingTarget(mat, tar);
+console.log(srMat);
+
+function searchTargetMat(matrix, target) {
+  let row = 0;
+  let col = matrix[0].length - 1;
+
+  while (row < matrix.length && col >= 0) {
+    let curr = matrix[row][col];
+    if (curr === target) {
+      return true;
+    } else if (curr > target) {
+      col--;
+    } else {
+      row++;
+    }
+  }
+}
+
+let mat1 = [
+  [1, 2, 4],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+let tar1 = 11;
+
+let srMat1 = searchTargetMat(mat1, tar1);
+console.log(srMat1);
