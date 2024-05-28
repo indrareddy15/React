@@ -93,3 +93,39 @@ let tar1 = 11;
 
 let srMat1 = searchTargetMat(mat1, tar1);
 console.log(srMat1);
+
+
+function stringCompress(n, str) {
+  let f1 = str.indexOf("1");
+  let l0 = str.lastIndexOf("0");
+
+  if (f1 > l0 || f1 === -1 || l0 === -1) {
+    return str
+  }
+  return str.slice(0, f1) + str.slice(l0 + 1)
+}
+
+let strCompress = stringCompress("1001010")
+console.log(strCompress)
+
+
+function stringCompres(n, str) {
+  let result = "";
+  let count = 1;
+
+  for (let i = 1; i < n; i++) {
+    if (str[i] === str[i - 1]) {
+      count++;
+    } else {
+      result += str[i - 1] + count;
+      count = 1;
+    }
+  }
+
+  result += str[n - 1] + count;
+
+  return result.length < n ? result : str;
+}
+
+let strCompres = stringCompres("1001010");
+console.log(strCompres);
