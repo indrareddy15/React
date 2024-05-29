@@ -194,7 +194,7 @@ function robotReturnToOrigin(moves) {
       row++;
     } else if (move === "L") {
       col--;
-    } else {
+    } else if (move === "R") {
       col++;
     }
   }
