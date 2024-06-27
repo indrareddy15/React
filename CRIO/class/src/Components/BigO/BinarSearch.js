@@ -94,20 +94,18 @@ let tar1 = 11;
 let srMat1 = searchTargetMat(mat1, tar1);
 console.log(srMat1);
 
-
 function stringCompress(n, str) {
   let f1 = str.indexOf("1");
   let l0 = str.lastIndexOf("0");
 
   if (f1 > l0 || f1 === -1 || l0 === -1) {
-    return str
+    return str;
   }
-  return str.slice(0, f1) + str.slice(l0 + 1)
+  return str.slice(0, f1) + str.slice(l0 + 1);
 }
 
-let strCompress = stringCompress("1001010")
-console.log(strCompress)
-
+let strCompress = stringCompress("1001010");
+console.log(strCompress);
 
 function stringCompres(n, str) {
   let result = "";
@@ -129,7 +127,6 @@ function stringCompres(n, str) {
 
 let strCompres = stringCompres("1001010");
 console.log(strCompres);
-
 
 function search(nums, target) {
   let left = 0;
@@ -154,3 +151,76 @@ function search(nums, target) {
   }
   return -1;
 }
+
+const seq = [
+  {
+    name: "John Doe",
+    age: 30,
+    gender: "male",
+    occupation: "Engineer",
+  },
+  {
+    name: "Jane Smith",
+    age: 25,
+    gender: "female",
+    occupation: "Doctor",
+  },
+  {
+    name: "Alex Johnson",
+    age: 35,
+    gender: "other",
+    gender_description: "Non-binary",
+    occupation: "Artist",
+  },
+  {
+    name: "John Doe",
+    age: 30,
+    gender: "male",
+    occupation: "Engineer",
+  },
+  {
+    name: "Jane Smith",
+    age: 25,
+    gender: "female",
+    occupation: "Doctor",
+  },
+  {
+    name: "Alex Johnson",
+    age: 35,
+    gender: "other",
+    gender_description: "Non-binary",
+    occupation: "Artist",
+  },
+  {
+    name: "John Doe",
+    age: 30,
+    gender: "male",
+    occupation: "Engineer",
+  },
+  {
+    name: "Jane Smith",
+    age: 25,
+    gender: "female",
+    occupation: "Doctor",
+  },
+  {
+    name: "Alex Johnson",
+    age: 35,
+    gender: "other",
+    gender_description: "Non-binary",
+    occupation: "Artist",
+  },
+];
+
+function bt1(seq) {
+  const filterMale = seq.filter((gen) => gen.gender === "male")
+  console.log(filterMale); 
+}
+
+bt1()
+
+function btn2() {
+  const filteredFemale = seq.filter((gen) => gen.gender === "female")
+  console.log(filteredFemale)
+}
+btn2()
