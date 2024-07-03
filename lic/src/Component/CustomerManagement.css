@@ -1,0 +1,79 @@
+.customer-management {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.search-form,
+.customer-details-form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.additional-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.search-form input,
+.customer-details-form input {
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.search-form button,
+.customer-details-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: #e7e7e7; /* Light grey, to differentiate from hover state */
+}
+
+.search-form button:hover,
+.customer-details-form button:hover {
+  background-color: #d4d4d4; /* Slightly darker grey for hover state */
+}
+
+.search-results table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.search-results th,
+.search-results td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.search-results th {
+  background-color: #f2f2f2;
+}
+
+.search-results td:hover {
+  background-color: #f1f1f1;
+}
+
+.additional-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.additional-details li {
+  padding: 5px 0;
+}
