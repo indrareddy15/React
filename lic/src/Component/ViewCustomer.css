@@ -7,7 +7,6 @@
 }
 
 .search-form,
-.customer-details-form,
 .additional-details {
   border: 1px solid #ccc;
   padding: 20px;
@@ -15,7 +14,21 @@
   background-color: #f9f9f9;
 }
 
-.search-form input,
+.customer-details-form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.search-form input {
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
 .customer-details-form input {
   margin-right: 10px;
   padding: 10px;
