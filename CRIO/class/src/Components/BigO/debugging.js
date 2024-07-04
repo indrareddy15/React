@@ -17,13 +17,13 @@ console.log(arr1);
 let arr2 = [1, 2, 3, 4, 5];
 arr2.unshift(0);
 // if array len is 5 to add a num in index[0] array will require 5 shifting operations
-// if arr len is N then N shifting operations will requrie
+// if arr len is N then N shifting operations will require
 // then Time complexity of unshift is O(N)
 
 let arr3 = [1, 2, 3, 4, 5];
 arr3.shift(1);
-// if array len is 5 to remove a num in index[0] array will require 5-1 =>4 shifting operations
-// if arr len is N then N-1 shifting operations will requrie
+// if array len is 5 to remove a num in index[0] array will require 5-1 => 4 shifting operations
+// if arr len is N then N-1 shifting operations will require
 // then Time complexity of unshift is O(N-1) => O(N)
 
 // shift and unshfit are bad operations

@@ -57,7 +57,7 @@ function getKthIndex(nums, j) {
   return maxK;
 }
 
-function maxSumTriplet(n, nums) {
+function maxSumTriplet1(n, nums) {
   let maxSum = 0;
   for (let j = 1; j < n - 1; j++) {
     let ithValue = getIthIndex(nums, j);

@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 
 const ReactRef = () => {
-  const [searctText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState("");
 
-  // inputRef is the ref object that can be used to access and manipulate the DOM directly or store mutable (changele) values.
+  // inputRef is the ref object that can be used to access and manipulate the DOM directly or store mutable (changeable) values.
   const inputRef = useRef(null);
   console.log("input Ref : :", inputRef);
 
@@ -17,11 +17,11 @@ const ReactRef = () => {
       <input
         ref={inputRef}
         type="text"
-        value={searctText}
+        value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
       />
       <br />
-      {<h1>{searctText}</h1>}
+      {<h1>{searchText}</h1>}
     </div>
   );
 };
