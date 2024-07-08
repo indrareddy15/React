@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Weather Forecast Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The Weather Forecast Application is a simple and interactive web app that allows users to view current weather conditions and a 5-day weather forecast for a specified city. This application fetches weather data from an external API and displays it in an easy-to-read format.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Current Weather Display**: View the current temperature, humidity, and weather conditions for a specified city.
+- **5-Day Forecast**: See the weather forecast for the next five days, including temperature and weather conditions.
+- **User-Friendly Interface**: Simple and intuitive UI for a seamless user experience.
+- **Real-Time Data**: Fetches and displays real-time weather data from an external API.
+- **Form Validation**: Ensures users input a valid city name before fetching data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Functionality
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Components
 
-### `npm test`
+#### `WeatherForm.js`
+- **Purpose**: Renders a form for users to input the city name and fetch weather data.
+- **Props**: 
+  - `onSubmit`: Function to handle form submission.
+- **Description**: 
+  - Includes an input field for the city name and a submit button. When the form is submitted, it triggers the `onSubmit` function provided via props.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### `WeatherDisplay.js`
+- **Purpose**: Displays the current weather data for the specified city.
+- **Props**:
+  - `weatherData`: Object containing current weather information.
+- **Description**: 
+  - Shows the current temperature, humidity, and weather conditions.
 
-### `npm run build`
+#### `Forecast.js`
+- **Purpose**: Displays a 5-day weather forecast for the specified city.
+- **Props**:
+  - `forecastData`: Array containing weather forecast information for the next five days.
+- **Description**: 
+  - Renders a list of weather forecast data including date, temperature, and weather conditions for each day.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Main Component
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### `App.js`
+- **Purpose**: Manages the state and logic of the weather forecast application.
+- **State**:
+  - `city`: Stores the name of the city.
+  - `currentWeather`: Stores the current weather data.
+  - `forecast`: Stores the 5-day weather forecast data.
+- **Functions**:
+  - `fetchWeatherData`: Fetches weather data from the external API and updates the state.
+- **Description**:
+  - Renders the main layout including the `WeatherForm`, `WeatherDisplay`, and `Forecast` components. Handles the logic for fetching and displaying weather data.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Styling
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### `App.css`
+- **Purpose**: Provides basic styling for the application.
+- **Description**: 
+  - Includes styles for the main container and buttons.
