@@ -172,10 +172,39 @@ function searchrarget(matrix, tar) {
 }
 
 function reverseWordsInAString(s) {
-    let str = s.split(" ");
-    return str.reverse().join(" ").trim();
+  let str = s.split(" ");
+  return str.reverse().join(" ").trim();
 }
 
 // Example usage
 const inputString = "  hello world  ";
 console.log(reverseWordsInAString(inputString)); // Output: "world hello"
+
+function maxProduct(nums) {
+  nums.sort((a, b) => a - b);
+  let case1 = nums[0] * nums[1] * nums[nums.length - 1];
+  let case2 =
+    nums[nums.length - 1] * nums[nums.length - 2] * nums[nums.length - 3];
+
+  return Math.max(case1, case2);
+}
+
+console.log("maxProduct", maxProduct([2, -5, 20, -10, 1, 6]));
+
+
+// function sumN(n) {
+//     let sum = 0;
+//     for(let i = 0; i <=n; i++) {
+//         sum += i
+//     }
+//     return sum
+// }
+// console.log(sumN(10));
+
+// function nSum(n) {
+//     if (n === 0) {
+//         return 1
+//     }
+//     return (n * nSum(n -1))
+// }
+// console.log(nSum(5));
