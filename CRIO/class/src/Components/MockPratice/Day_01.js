@@ -191,7 +191,6 @@ function maxProduct(nums) {
 
 console.log("maxProduct", maxProduct([2, -5, 20, -10, 1, 6]));
 
-
 // function sumN(n) {
 //     let sum = 0;
 //     for(let i = 0; i <=n; i++) {
@@ -208,3 +207,77 @@ console.log("maxProduct", maxProduct([2, -5, 20, -10, 1, 6]));
 //     return (n * nSum(n -1))
 // }
 // console.log(nSum(5));
+
+function primeNumber(n) {
+  for (let i = 2; i * i <= n; i++) {
+    if (n % i !== 0) {
+      return "Prime";
+    }
+  }
+  return "not Prime";
+}
+console.log(primeNumber(11));
+
+function primeCounts(n) {
+  let count = 0;
+  for (let i = 2; i * i <= n.length; i++) {
+    if (n % i !== 0) {
+      count += i;
+    }
+  }
+  return count;
+}
+console.log("Count", primeCounts([3, 5, 7, 14, 2, 15, 21, 55]));
+
+function isPrime(num) {
+  for (let i = 2; i * i <= num; i++) {
+    if (n % i === 0) return false;
+  }
+  return num > 1;
+}
+
+function primeCount(arr) {
+  let cnt = 0;
+  for (let num of arr) {
+    if (isPrime(num)) {
+      cnt++;
+    }
+  }
+  return cnt;
+}
+console.log("Count", primeCount([3, 5, 7, 14, 2, 15, 21, 55]));
+
+// Euclidean Algorithm;
+// gcd(a,0) = a
+// gcd(a,b) = gcd(b, a % b)
+// gcd(36,24) = gcd(24, 36 % 24) ==> 36 % 24 = 24
+//            = gcd(24 , 24)
+
+function gcd(a, b) {
+  if (b === 0) {
+    return a;
+  }
+  return gcd(b, a % b);
+}
+function gcdArray(n, arr) {
+  let ans = 0;
+  for (let i = 0; i < n; i++) {
+    ans = gcd(ans, arr[i]);
+  }
+  return ans;
+}
+console.log(gcdArray("gcdArray", 4, [4, 6, 8, 16]));
+
+//101 843 556 466
+//7581 1684 3661
+
+function coPrime(n) {
+  let cnt = 0;
+  for (let i = 0; i <= n; i++) {
+    if (gcd(n, i) === 1) {
+      cnt++;
+    }
+  }
+  return cnt;
+}
+console.log("CoPrime", coPrime(9));
