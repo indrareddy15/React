@@ -357,3 +357,24 @@ function findPeakUtil(arr, n) {
 // A wrapper over recursive function findPeakUtil()
 let peak = findPeakUtil([1, 3, 20, 4, 1, 0], arr.length);
 console.log("Index of a peak point is " + peak);
+
+function anagram(str1, str2) {
+  let n1 = str1.length;
+  let n2 = str2.length;
+
+  if (n1 !== n2) {
+    return false;
+  }
+
+  str1.sort();
+  str2.sort();
+
+  for (let i = 0; i < n1; i++) {
+    if (str1[i] !== str2[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log("Anagram", anagram(["b", "a", "c"], ["c", "b", "a"]));
