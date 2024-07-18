@@ -378,3 +378,49 @@ function anagram(str1, str2) {
 }
 
 console.log("Anagram", anagram(["b", "a", "c"], ["c", "b", "a"]));
+
+function findAllAnagramsInAString(s, p) {
+  let pmap = new Map();
+
+  for (let i = 0; i < p.length; i++) {
+    pmap.set(p[i], (pmap.get(p[i]) || 0) + 1);
+  }
+
+  let ans = [];
+  let smap = new Map();
+
+  for (let i = 0; i < s.length; i++) {
+    smap.set(s[i], (smap.get(s[i]) || 0) + 1);
+
+    if (i >= p.length - 1) {
+      if (isMapEqual(smap, pmap)) {
+        let j = i - p.length + 1;
+        ans.push(j);
+      }
+
+      let lastEle = s[i - p.length + 1];
+      let lastEleCount = smap.get(lastEle);
+      if (lastEleCount === 1) {
+        smap.delete(lastEle);
+      } else {
+        smap.set(lastEle, lastEleCount - 1);
+      }
+    }
+  }
+
+  return ans;
+}
+
+function isMapEqual(map1, map2) {
+  if (map1.size !== map2.size) {
+    return false;
+  }
+
+  for (let [key, value] of map1) {
+    if (map2.get(key) !== value) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log("Anagram", findAllAnagramsInAString("aaba", "ab"));
