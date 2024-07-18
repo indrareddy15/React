@@ -1,0 +1,42 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./FilterIcons.css" />
+</head>
+
+<body>
+	<div id="filterPanel">
+		<label for="select">Application Icon Assects :</label>
+		<select name="select" id="select">
+			<option value="">Select</option>
+			<option value="">Tech</option>
+			<option value="">HCM</option>
+			<option value="">ERP</option>
+			<option value="">AVN</option>
+		</select>
+		<select name="select" id="onSelect" onchange="fillColor()">
+			<option value="select">select</option>
+			<option value="red">red</option>
+			<option value="blue">blue</option>
+			<option value="green">green</option>
+			<option value="gray">gray</option>
+			<option value="orange">orange</option>
+			<option value="white">white</option>
+		</select>
+		</select>
+		<label for="searchText">Discreption:</label>
+		<input type="text" id="searchText" />
+	</div>
+	<div id="displayPanel">
+	</div>
+	<div id="buttonsPanel">
+		<p align="right">
+			<input type="button" id="Cancel" value="Cancel" />
+		</p>
+	</div>
+</body>
+<script type="text/javascript" src="./FilterIcons.js"></script>
+
+</html>

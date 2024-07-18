@@ -1,0 +1,42 @@
+#filterPanel {
+	width: 100%;
+	height: 40px;
+	border: 1px solid gray;
+}
+
+#buttonsPanel {
+	width: 100%;
+	height: 40px;
+	border: 1px solid gray;
+}
+
+#displayPanel {
+	width: 100%;
+	height: 60%;
+	border: 1px solid gray;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+
+.style {
+	width: 30px;
+	height: 30px;
+	margin: 2px;
+	border: 1px solid black;
+	background-color: white;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	padding: 3px;
+}
+
+svg {
+	width: 20px;
+	height: 110px;
+}
+
+svg:hover {
+	fill: orange;
+}
