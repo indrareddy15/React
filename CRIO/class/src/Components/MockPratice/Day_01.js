@@ -424,3 +424,27 @@ function isMapEqual(map1, map2) {
   return true;
 }
 console.log("Anagram", findAllAnagramsInAString("aaba", "ab"));
+
+function frequentWords(words, k) {
+  let map = new Map();
+  for (let i = 0; i < words.length; i++) {
+    map.set(words[i], (map.get(words[i]) || 0) + 1);
+  }
+
+  let arr = Array.from(map.entries());
+
+  arr.sort((a, b) => {
+    if (a[1] == b[1]) {
+      return a[0].localeCompare(b[0]);
+    }
+    return b[1] - a[1];
+  });
+
+  let anss = [];
+  for (let i = 0; i < k; i++) {
+    anss.push(arr[i][0]);
+  }
+  return anss;
+}
+
+console.log("freq", frequentWords(1, ["bus"], 1));
