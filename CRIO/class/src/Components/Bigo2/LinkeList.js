@@ -34,7 +34,7 @@ class LinkedList {
   addEleAtEndNode(value) {
     let newNode = new Node(value);
 
-    if (this.head === null()) {
+    if (this.head === null) {
       this.head = newNode;
     } else {
       let prev = this.head;
@@ -97,3 +97,22 @@ l1.addNodeAtIndexLevel(3, 1);
 l1.addNodeAtIndexLevel(5, 3);
 l1.addNodeAtIndexLevel(1, 0);
 l1.printLinkedList();
+
+class CLinkedList {
+  constructor() {
+    let dummyNode = new Node(-1);
+    this.head = dummyNode;
+    this.tail = dummyNode;
+  }
+
+  addNode(node) {
+    this.tail.next = node;
+    this.tail = node;
+  }
+}
+
+function partitionLinkedList(head, x) {}
+console.log("partionLinkedList", partitionLinkedList([1, 2, 3, 4, 5], 3));
+
+// Note: The provided code snippet attempts to call partitionLinkedList with an array, but the function expects a linked list node.
+// To test this function, you would need to create a linked list from the array and then pass the head of the linked list to the function.
