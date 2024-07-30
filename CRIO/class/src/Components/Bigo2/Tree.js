@@ -69,7 +69,9 @@ function rightView(root) {
   }
   return ans;
 }
-
+function Queue() {
+  return null;
+}
 function topView(root) {
   let q = new Queue();
 
@@ -196,7 +198,7 @@ function validateBinarySearchTree(root) {
 
 let remainingValue = 0;
 let ans = 0;
-function inOrder(root) {
+function inOrders(root) {
   if (root === null) {
     return;
   }
@@ -275,24 +277,22 @@ function boundaryLevelTraversal(node) {
   return result;
 }
 
-class BinaryTree {
-  lowestCommonAncestorInBST(root, p, q) {
-    if (!root || root === p || root === q) {
-      return root;
-    }
-
-    let leftLCA = lowestCommonAncestorInBST(root.left, p, q);
-    let rightLCA = lowestCommonAncestorInBST(root.right, p, q);
-
-    if (leftLCA && rightLCA) {
-      return root;
-    }
-
-    return leftLCA || rightLCA;
+function lowestCommonAncestorInBST(root, p, q) {
+  if (!root || root === p || root === q) {
+    return root;
   }
+
+  let leftLCA = lowestCommonAncestorInBST(root.left, p, q);
+  let rightLCA = lowestCommonAncestorInBST(root.right, p, q);
+
+  if (leftLCA && rightLCA) {
+    return root;
+  }
+
+  return leftLCA || rightLCA;
 }
 
-function insertBST(node, data) {
+function insertBST(root, data) {
   if (root == null) {
     return new TreeNode(data);
   } else {
@@ -308,11 +308,11 @@ function insertBST(node, data) {
       temp.parent = root;
     }
 
-    return node;
+    return root;
   }
 }
 
-function inOrderSuccessor(root, givenNode) {
+function inOrderSuccessor(root, givenNode, minValue, n) {
   if (givenNode.right != null) {
     return minValue(n.right);
   }
@@ -326,20 +326,20 @@ function inOrderSuccessor(root, givenNode) {
   return p;
 }
 
-class TreeNode {
-  constructor(val) {
-    this.val = val;
-    this.left = null;
-    this.right = null;
-  }
-}
+// class TreeNodes {
+//   constructor(val) {
+//     this.val = val;
+//     this.left = null;
+//     this.right = null;
+//   }
+// }
 
-function inOrderTraversal(root, result) {
-  if (root === null) return;
-  inOrderTraversal(root.left, result);
-  result.push(root.val);
-  inOrderTraversal(root.right, result);
-}
+// function inOrderTraversal(root, result) {
+//   if (root === null) return;
+//   inOrderTraversal(root.left, result);
+//   result.push(root.val);
+//   inOrderTraversal(root.right, result);
+// }
 
 function sortedArrayToBST(arr) {
   if (arr.length === 0) return null;
@@ -414,7 +414,7 @@ function zigZagTraversal(root) {
   return ans;
 }
 
-function printZigZagTraversal() {
+function printZigZagTraversal(rootNode) {
   if (rootNode == null) {
     return;
   }
