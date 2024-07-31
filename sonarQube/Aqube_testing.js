@@ -36,7 +36,7 @@ const projectKeys = [
   // "Runtime_VWMail",
   // "Runtime_Vwsecurity",
   // "Runtime_WebConfig",
-  "Runtime_VWInstallationCenter",
+  // "Runtime_VWInstallationCenter",
 ];
 
 // Define your SonarQube token
