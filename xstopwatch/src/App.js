@@ -1,12 +1,10 @@
 import './App.css';
-// import XStopwatch from './Components/Stopwatch/XStopwatch';
-import HomePage from './Pages/Home';
+import XStopwatch from './components/Stopwatch/XStopwatch';
 
 function App() {
   return (
     <div className="App">
-      {/* <XStopwatch /> */}
-      <HomePage />
+      <XStopwatch />
     </div>
   );
 }
