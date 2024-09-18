@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 
 // Helper function to format time
 const formatTime = (time) => {
@@ -10,33 +10,30 @@ const formatTime = (time) => {
 const XStopwatch = () => {
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
-  const intervalRef = useRef(null);
 
   useEffect(() => {
+    let intervalId;
     if (isRunning) {
-      intervalRef.current = setInterval(() => {
+      intervalId = setInterval(() => {
         setTime((prevTime) => prevTime + 1);
       }, 1000);
-    } else {
-      clearInterval(intervalRef.current);
     }
-
-    return () => clearInterval(intervalRef.current);
+    return () => clearInterval(intervalId);
   }, [isRunning]);
 
-  const handleToggle = useCallback(() => {
+  const handleToggle = () => {
     setIsRunning((prev) => !prev);
-  }, []);
+  };
 
-  const handleReset = useCallback(() => {
+  const handleReset = () => {
     setIsRunning(false);
     setTime(0);
-  }, []);
+  };
 
   return (
     <div>
       <h1>Stopwatch</h1>
-      <p>{formatTime(time)}</p>
+      <p>{`Time: ${formatTime(time)}`}</p>
       <button onClick={handleToggle}>{isRunning ? "Stop" : "Start"}</button>
       <button onClick={handleReset}>Reset</button>
     </div>
