@@ -78,3 +78,212 @@ Hooks are used in functional Components. They are native React APIs (functions) 
 ## 14. How do you handle events in React
 
 Event handling works very differently in different browsers (Firefox, Safari). The React team came up with a new system in React called Synthetic events.
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# React Performance Optimization Guide
+
+## 1. Use React.memo for Component Memoization
+
+`React.memo` is a higher-order component that can prevent unnecessary re-renders of functional components.
+
+```jsx
+import React from "react";
+
+const MyComponent = React.memo(function MyComponent(props) {
+  /* render using props */
+});
+
+// Or with arrow function
+const MyComponent = React.memo((props) => {
+  /* render using props */
+});
+```
+
+## 2. Implement shouldComponentUpdate for Class Components
+
+For class components, you can use `shouldComponentUpdate` to prevent unnecessary re-renders.
+
+```jsx
+class MyComponent extends React.Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    // Return true if you want it to update
+    return nextProps.id !== this.props.id;
+  }
+
+  render() {
+    return <div>{this.props.id}</div>;
+  }
+}
+```
+
+## 3. Use the useCallback Hook
+
+`useCallback` returns a memoized version of the callback that only changes if one of the dependencies has changed.
+
+```jsx
+import React, { useCallback } from "react";
+
+function MyComponent({ item, onItemClick }) {
+  const handleClick = useCallback(() => {
+    onItemClick(item);
+  }, [item, onItemClick]);
+
+  return <button onClick={handleClick}>Click me</button>;
+}
+```
+
+## 4. Utilize the useMemo Hook
+
+`useMemo` can be used to memoize expensive computations.
+
+```jsx
+import React, { useMemo } from "react";
+
+function MyComponent({ data }) {
+  const processedData = useMemo(() => {
+    return expensiveOperation(data);
+  }, [data]);
+
+  return <div>{processedData}</div>;
+}
+```
+
+## 5. Virtualize Long Lists
+
+For long lists, use a virtualization library like `react-window` to render only the visible items.
+
+```jsx
+import React from "react";
+import { FixedSizeList as List } from "react-window";
+
+const Row = ({ index, style }) => <div style={style}>Row {index}</div>;
+
+const MyList = () => (
+  <List height={400} itemCount={1000} itemSize={35} width={300}>
+    {Row}
+  </List>
+);
+```
+
+## 6. Code-Splitting with React.lazy and Suspense
+
+Use dynamic imports to split your code and lazy-load components.
+
+```jsx
+import React, { Suspense } from "react";
+
+const OtherComponent = React.lazy(() => import("./OtherComponent"));
+
+function MyComponent() {
+  return (
+    <div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <OtherComponent />
+      </Suspense>
+    </div>
+  );
+}
+```
+
+## 7. Avoid Anonymous Functions in Render
+
+Instead of using anonymous functions in render, define them outside or use class methods.
+
+```jsx
+// Avoid
+<button onClick={() => this.handleClick()}>Click me</button>
+
+// Better
+<button onClick={this.handleClick}>Click me</button>
+```
+
+## 8. Use Production Build
+
+Always use the production build of React for deployment. It's smaller and faster.
+
+```bash
+npm run build
+```
+
+## 9. Implement PureComponent for Class Components
+
+`PureComponent` implements `shouldComponentUpdate` with a shallow prop and state comparison.
+
+```jsx
+import React, { PureComponent } from "react";
+
+class MyComponent extends PureComponent {
+  render() {
+    return <div>{this.props.name}</div>;
+  }
+}
+```
+
+## 10. Avoid Inline Object Creation in JSX
+
+Creating objects inline in JSX can lead to unnecessary re-renders. Define them outside the render method.
+
+```jsx
+// Avoid
+render() {
+  return <MyComponent style={{ margin: 0 }} />;
+}
+
+// Better
+const style = { margin: 0 };
+render() {
+  return <MyComponent style={style} />;
+}
+```
+
+## 11. Use Fragment to Avoid Additional HTML Element Wrappers
+
+```jsx
+import React, { Fragment } from "react";
+
+function MyComponent() {
+  return (
+    <Fragment>
+      <ChildA />
+      <ChildB />
+      <ChildC />
+    </Fragment>
+  );
+}
+```
+
+## 12. Profiling with React DevTools
+
+Use the React DevTools profiler to identify performance bottlenecks in your application.
+
+```jsx
+import React, { Profiler } from "react";
+
+function onRenderCallback(
+  id, // the "id" prop of the Profiler tree that has just committed
+  phase, // either "mount" (if the tree just mounted) or "update" (if it re-rendered)
+  actualDuration, // time spent rendering the committed update
+  baseDuration, // estimated time to render the entire subtree without memoization
+  startTime, // when React began rendering this update
+  commitTime, // when React committed this update
+  interactions // the Set of interactions belonging to this update
+) {
+  // Log or send to analytics
+}
+
+function MyComponent() {
+  return (
+    <Profiler id="MyComponent" onRender={onRenderCallback}>
+      <div>My Component Content</div>
+    </Profiler>
+  );
+}
+```
+
+By implementing these techniques, you can significantly improve the performance of your React application. Remember to measure the impact of each optimization and focus on the areas that provide the most significant improvements for your specific application.
+
+
