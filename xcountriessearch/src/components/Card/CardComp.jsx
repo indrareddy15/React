@@ -12,7 +12,7 @@ function CardComp({ searchChange, flagData, searchTerm, searchflag }) {
       />
       <div className="card-container">
         {(searchTerm === " " ? flagData : searchflag).map((item, idx) => (
-          <div className="card">
+          <div className="countryCard ">
             <img
               key={idx}
               className="flag-image"
