@@ -38,7 +38,12 @@ function CountryFlag() {
 
   return (
     <div>
-      <CardComp flag={filteredCountries} searchChange={handleSearchChange} />
+      <CardComp
+        searchflag={filteredCountries}
+        searchChange={handleSearchChange}
+        searchTerm={searchTerm}
+        flagData={apiData}
+      />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Card.css";
 
-function CardComp({ flag, searchChange }) {
+function CardComp({ searchChange, flagData, searchTerm, searchflag }) {
   return (
     <div>
       <input
@@ -11,9 +11,10 @@ function CardComp({ flag, searchChange }) {
         onChange={searchChange}
       />
       <div className="card-container">
-        {flag.map((item, idx) => (
+        {(searchTerm === " " ? flagData : searchflag).map((item, idx) => (
           <div className="card">
             <img
+              key={idx}
               className="flag-image"
               src={item.flags.png}
               alt={item.flags.alt}
