@@ -135,6 +135,17 @@
     - Event handling work very different in different browsers(FireFox, Safari) React team came with new system in React that is Synthetic events
     - Synthetic events in React have the same interface as actual DOM events
     - Synthetic Events are new way of handling the events in react like event object is attached to root element and this root element will caputre then it will check what is happening in the react application {It will capture with the help of event bubbling}
+Key Features of Synthetic Events
+Normalization:
+    . For instance, properties and methods of native events (like event.target, event.preventDefault(), etc.)
+    
+Event Pooling
+    event.persist() to retain the event object for asynchronous operations.
+
+Bubbling:
+
+Event Types: 
+React provides synthetic events for various types of interactions, including mouse events (onClick, onMouseEnter, etc.), keyboard events (onKeyPress, onKeyDown, etc.), and form events (onChange, onSubmit, etc.)
 
 ## 15. What is useState in React and How it is used in React
 
