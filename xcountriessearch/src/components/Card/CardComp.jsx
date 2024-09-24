@@ -19,7 +19,7 @@ function CardComp({ searchChange, flagData, searchTerm, searchflag }) {
               src={item.flags.png}
               alt={item.flags.alt}
             />
-            <div className="flag-name">{item.name.common}</div>
+            <p className="flag-name">{item.name.common}</p>
           </div>
         ))}
       </div>
