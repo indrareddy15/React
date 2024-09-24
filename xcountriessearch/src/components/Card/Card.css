@@ -1,22 +1,22 @@
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-}
-
 .countryCard {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  text-align: center;
-  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  width: 200px;
+  height: 200px;
 }
 
 .flag-image {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
+  width: 100px;
+  height: 100px;
+  /* height: auto;
+  border-radius: 4px; */
 }
 
 .flag-name {
@@ -26,11 +26,11 @@
 }
 
 .search-field {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 15px;
-  width: 50rem;
-  margin: 10px;
+  width: 100%;
+  max-width: 50rem;
+  margin: 10px auto;
   padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }

@@ -3,7 +3,7 @@ import "./Card.css";
 
 function CardComp({ searchChange, flagData, searchTerm, searchflag }) {
   return (
-    <div>
+    <>
       <input
         type="text"
         placeholder="Search for Countries"
@@ -23,7 +23,7 @@ function CardComp({ searchChange, flagData, searchTerm, searchflag }) {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }
 
