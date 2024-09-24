@@ -287,3 +287,99 @@ function MyComponent() {
 By implementing these techniques, you can significantly improve the performance of your React application. Remember to measure the impact of each optimization and focus on the areas that provide the most significant improvements for your specific application.
 
 
+Arrow Function
+1).Uses a concise syntax, often without the function keyword.
+		const add = (a, b) => a + b;
+		
+2).Does not have its own this. It lexically binds this, meaning it uses the this value from the surrounding context.
+					const obj = {
+				value: 42,
+				getValue: function() {
+					const innerFunc = () => this.value; // 'this' refers to 'obj'
+					return innerFunc();
+				}
+			};
+
+3).Does not have its own arguments object. To access arguments, you need to use rest parameters.
+				const myFunc = (...args) => {
+					console.log(args);
+				};
+
+4).Cannot be used as constructors and will throw an error if you try to use new with them.
+			const Person = (name) => {
+			this.name = name; // Error if used with 'new'
+		};
+
+Normal Function
+1).Requires the function keyword.
+			function add(a, b) {
+				return a + b;
+			}
+			
+2).Has its own this, which can vary depending on how the function is called.
+		const obj = {
+			value: 42,
+			getValue: function() {
+				function innerFunc() {
+					return this.value; // 'this' refers to the global object or undefined in strict mode
+				}
+				return innerFunc();
+			}
+		};
+		
+3).Has its own arguments object, which is an array-like object representing the arguments passed to the function
+		function myFunc() {
+			console.log(arguments);
+		}
+		
+4). Can be used as constructors with the new keyword.
+		function Person(name) {
+		this.name = name;
+	}
+
+
+What are the optimization techniques in React applications
+1).Memoization:
+	React.memo: Wrap functional components to prevent re-renders when props haven't changed.
+	useMemo and useCallback: Use these hooks to memoize values and functions, respectively, to avoid unnecessary computations
+2).Pure Components:
+	Use React.PureComponent for class components to automatically handle shallow prop and state comparisons.
+3).Code Splitting:
+	Utilize dynamic imports and React’s Suspense to load components or routes only when needed. This reduces the initial load time.
+4).Virtualization:
+	Use libraries like react-window or react-virtualized for rendering large lists efficiently by only rendering items in view.
+5.)Avoiding Inline Functions:
+	Define functions outside of render methods to prevent creating new function instances on each render.
+6.)Optimizing Context Usage:
+	Use multiple contexts or separate providers to avoid unnecessary re-renders of components that don't depend on certain pieces of context.
+7.)Server-Side Rendering (SSR):
+	Consider using frameworks like Next.js for SSR to improve initial load times and SEO.
+8).Reduce Bundle Size:
+	Analyze your bundle with tools like Webpack Bundle Analyzer and remove unnecessary libraries or use tree-shaking
+9)Using the Production Build:
+	Always deploy a production build (npm run build) for optimal performance, as it minifies and optimizes your code
+10).Use a CDN
+	Use a Content Delivery Network (CDN) to make your app faster and more efficie
+
+
+
+Difference between Var let const
+Var:
+Function Scopped or Global Scopped if declared inside the function it can be accessable any where in the function scope
+If declared outside, it is globally accessible.
+Hoisting
+var:Variable can be hoisted and moved to top of their scope i.e they can be accessed before deceloration but they will be undefined untill the line of deceloration is reached
+var: Variable can be declared with var can be reassigned any number of times
+
+Let
+let is block-scoped , it is accessable with in the block (i.e Curly braces) in which is defined
+Hoisted let cannot be accessed until the deceloration is reached (this is known as temporal dead zone)
+Variables declared with let can also be reassigned.
+
+Const
+similar to let, const variables are block-scoped it cannot be reassigned after its initial assignment
+Similar to let, const variables are hoisted but cannot be accessed until their declaration.
+Variables declared with const cannot be reassigned. However, if the variable is an object or array, its properties or elements can still be modified.
+
+
+
