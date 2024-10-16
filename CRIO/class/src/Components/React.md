@@ -59,8 +59,11 @@
         - Class based components mainly work in Life Cycle Methods
         - Class-based components start with the keyword "class" and extend to `React.Component`. `React.Component` is the parent class from the React library. There are methods associated with class-based components:
 
-        - Constructor: The constructor method is only required when there is state in the class. It is called when an instance of the component is created.
-
+        - Constructor: The constructor method is only required when there is state in the class. It is called when an instance of the component is created. we have super keyword it used for calling constructor of the parent class
+		
+		- Why Use super?
+			Inheritance, Accessing
+		
         - Render: The render method is used to display UI by returning JSX. JSX is JavaScript code template which converts the HTML syntax to React function call. React function calls help to construct the       Virtual DOM, which updates the actual DOM and displays it in the UI.
 
         example this how react function call help to create a virtualDOM
@@ -134,18 +137,20 @@
 
     - Event handling work very different in different browsers(FireFox, Safari) React team came with new system in React that is Synthetic events
     - Synthetic events in React have the same interface as actual DOM events
-    - Synthetic Events are new way of handling the events in react like event object is attached to root element and this root element will caputre then it will check what is happening in the react application {It will capture with the help of event bubbling}
-Key Features of Synthetic Events
-Normalization:
-    . For instance, properties and methods of native events (like event.target, event.preventDefault(), etc.)
-    
-Event Pooling
-    event.persist() to retain the event object for asynchronous operations.
+    - Synthetic Events are new way of handling the events in react like event object is attached to root element and this root element will caputre the event with help of event bubbling and then it will check what is happening in the react application {It will capture with the help of event bubbling}
+	
+	- Key Features of Synthetic Events
+		Normalization:
+			. For instance, properties and methods of native events (like event.target, event.preventDefault(), etc.)
+			
+		Event Pooling
+			event.persist() to retain the event object for asynchronous operations.
 
-Bubbling:
+		Bubbling:
 
-Event Types: 
-React provides synthetic events for various types of interactions, including mouse events (onClick, onMouseEnter, etc.), keyboard events (onKeyPress, onKeyDown, etc.), and form events (onChange, onSubmit, etc.)
+		Event Types: 
+			React provides synthetic events for various types of interactions, including mouse events (onClick, onMouseEnter, etc.), keyboard events (onKeyPress, onKeyDown, etc.), and form events (onChange, onSubmit, etc.)
+			
 
 ## 15. What is useState in React and How it is used in React
 
@@ -158,7 +163,7 @@ React provides synthetic events for various types of interactions, including mou
         - This method ensures that you're always working with the latest state, even if state updates are batched or asynchronous.
         - For Example ==> setCount(prevCount => prevCount + 1); // Using callback to update state
 
-        - If it Object we need take a copy of Object abd then new property bcz all the other properties will erase
+        - If it Object we need take a copy of Object and then new property bcz all the other properties will erase
         - When updating state with an object, you should not directly modify the state variable. Instead, create a new object that represents the updated state.
         - This ensures that you're not mutating the original state, which could lead to unexpected behavior and bugs
         -  If the state is an object, you need to take a copy of the object and then update the specific property you want to change. This is because updating a single property directly will erase all other properties.
