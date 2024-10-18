@@ -13,7 +13,7 @@ function App() {
   const fetchWeather = async () => {
     if (!city) return;
 
-    setLoading(true);
+    // setLoading(true);
     setError("");
     setWeatherData(null);
 
