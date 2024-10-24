@@ -1,0 +1,30 @@
+.app.light {
+  background-color: white;
+  color: black;
+}
+
+.app.dark {
+  background-color: black;
+  color: white;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.chat-window {
+  height: 300px;
+  overflow-y: auto;
+}
+
+input,
+textarea {
+  margin: 10px 0;
+}
+
+button {
+  margin: 10px;
+}
