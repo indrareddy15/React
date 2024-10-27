@@ -29,7 +29,7 @@ const XModal = ({ onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-    //   alert("Form submitted successfully!");
+      //   alert("Form submitted successfully!");
       // Reset form
       setUsername("");
       setEmail("");
@@ -40,7 +40,7 @@ const XModal = ({ onClose }) => {
   };
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="modal" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <h2>Form</h2>
         <form onSubmit={handleSubmit}>
