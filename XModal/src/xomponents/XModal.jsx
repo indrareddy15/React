@@ -26,16 +26,17 @@ const XModal = ({ onClose }) => {
     }
     return true;
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      //   alert("Form submitted successfully!");
-      // Reset form
+      alert("Form submitted successfully!");
+      // Reset form and close modal
       setUsername("");
       setEmail("");
       setPhone("");
       setDob("");
-      onClose();
+      onClose(); // Close the modal
     }
   };
 
