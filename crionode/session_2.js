@@ -1,18 +1,16 @@
-const express = require("express")
+const express = require("express");
 const port = 8085;
-const currenciesJson = require("./coinbase.json")
-const app = express()
-
+const { getCurriencies, getCurrencieSymbol } = require("./controllers/curriencies.controller");
+const app = express();
 
 app.get("/", (req, res) => {
-    res.send("<h1>Currency Database</h1>")
-})
+    res.send("<h1>Currency Database</h1>");
+});
 
-app.get("/currencies", (req, res) => {
-    res.send(currenciesJson)
-    console.log(res.send(currenciesJson))
-})
+app.get("/currencies", getCurriencies);
+
+app.get("/currencies/:id", getCurrencieSymbol);
 
 app.listen(port, () => {
-    console.log(`Server is runnning at ${port}`)
-})
+    console.log(`Server is running at http://localhost:${port}`);
+});
