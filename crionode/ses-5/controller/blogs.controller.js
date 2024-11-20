@@ -5,10 +5,10 @@ const createBlog = async (req, res) => {
         const { title, author, content, publishDate } = req.body;
 
         if (!title) {
-            return res.status(400).json({ message: 'Title and content are required' });
+            return res.status(400).json({ message: 'Title is required' });
         }
-        const newBlog = new Blog(req.body);
-        // const newBlog = await Blog.create(req.body);
+        // const newBlog = new Blog(req.body);
+        const newBlog = await Blog.create(req.body);
         await newBlog.save();
         res.status(201).send(newBlog);
     } catch (error) {
@@ -30,23 +30,28 @@ const getBlogs = async (req, res) => {
 }
 
 const getBlogById = async (req, res) => {
+    res.send(req.blog);
+}
+
+const updateBlogById = async (req, res) => {
     try {
         const { blogId } = req.params;
-        const reqBlog = await Blog.findById(blogId);
-        if (!reqBlog) {
-            return res.status(404).json({ message: 'Blog not found' });
-        }
-        res.status(200).json(reqBlog);
+        const updatedBlog = await Blog.findByIdAndUpdate(blogId, req.body, { returnDocument: 'after' });
+        res.status(200).send(updatedBlog);
     } catch (error) {
-        if (error.name === 'CastError') {
-            return res.status(422).json({ message: 'Invalid blogId!' });
-        }
-        res.status(500).json({ message: 'Error getting blog by id', error });
+        res.status(500).json({ message: 'Error updating blog', error });
     }
 }
 
-const deleteBlog = async (req, res) => {
-    
- }
 
-module.exports = { createBlog, getBlogs, getBlogById };
+const deleteBlogById = async (req, res) => {
+    try {
+        const { blogId } = req.params;
+        await Blog.findByIdAndDelete(blogId);
+        res.sendStatus(204)
+    } catch (error) {
+        res.status(500).json({ message: 'Error deleting blog', error });
+    }
+}
+
+module.exports = { createBlog, getBlogs, getBlogById, updateBlogById, deleteBlogById };
