@@ -1,9 +1,6 @@
 const productModel = require("../model/productModel");
 const mongoose = require('mongoose');
 
-// Utility to validate ObjectId
-const isValidObjectId = (id) => mongoose.Types.ObjectId.isValid(id);
-
 // Create a new product
 const createProduct = async (req, res) => {
     try {
@@ -28,7 +25,6 @@ const createProduct = async (req, res) => {
     }
 };
 
-// Get all products with pagination
 const getAllProducts = async (req, res) => {
     try {
         const { page = 1, limit = 10 } = req.query;
@@ -45,13 +41,8 @@ const getAllProducts = async (req, res) => {
     }
 };
 
-// Get product by ID
 const getProductById = async (req, res) => {
     const { id } = req.params;
-
-    if (!id || !isValidObjectId(id)) {
-        return res.status(400).send({ message: "Valid product ID is required" });
-    }
 
     try {
         const product = await productModel.findById(id);
@@ -64,13 +55,8 @@ const getProductById = async (req, res) => {
     }
 };
 
-// Update product by ID
 const updateProductById = async (req, res) => {
     const { id } = req.params;
-
-    if (!id || !isValidObjectId(id)) {
-        return res.status(400).send({ message: "Valid product ID is required" });
-    }
 
     try {
         const updatedProduct = await productModel.findByIdAndUpdate(id, req.body, { new: true });
@@ -83,13 +69,9 @@ const updateProductById = async (req, res) => {
     }
 };
 
-// Delete product by ID
 const deleteProductById = async (req, res) => {
     const { id } = req.params;
 
-    if (!id || !isValidObjectId(id)) {
-        return res.status(400).send({ message: "Valid product ID is required" });
-    }
 
     try {
         const deletedProduct = await productModel.findByIdAndDelete(id);
