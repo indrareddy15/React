@@ -1,0 +1,111 @@
+const productModel = require("../model/productModel");
+const mongoose = require('mongoose');
+
+// Utility to validate ObjectId
+const isValidObjectId = (id) => mongoose.Types.ObjectId.isValid(id);
+
+// Create a new product
+const createProduct = async (req, res) => {
+    try {
+        const { name, price, description, model } = req.body;
+
+        // Validate required fields
+        if (!name) {
+            return res.status(400).send({ error: "Name is required" });
+        }
+        if (!price || isNaN(price)) {
+            return res.status(400).send({ error: "Valid price is required" });
+        }
+
+        // Create the product
+        const newProduct = await productModel.create(req.body);
+        res.status(201).send(newProduct);
+    } catch (error) {
+        if (error.code === 11000) {
+            return res.status(409).send({ message: `Product with name '${error.keyValue.name}' already exists` });
+        }
+        res.status(500).send({ error: error.message });
+    }
+};
+
+// Get all products with pagination
+const getAllProducts = async (req, res) => {
+    try {
+        const { page = 1, limit = 10 } = req.query;
+        const skip = (page - 1) * limit;
+
+        const products = await productModel.find().skip(skip).limit(limit);
+
+        if (products.length === 0) {
+            return res.status(404).send({ message: "No products found" });
+        }
+        res.status(200).send(products);
+    } catch (error) {
+        res.status(500).send({ error: error.message });
+    }
+};
+
+// Get product by ID
+const getProductById = async (req, res) => {
+    const { id } = req.params;
+
+    if (!id || !isValidObjectId(id)) {
+        return res.status(400).send({ message: "Valid product ID is required" });
+    }
+
+    try {
+        const product = await productModel.findById(id);
+        if (!product) {
+            return res.status(404).send({ message: "Product not found" });
+        }
+        res.status(200).send(product);
+    } catch (error) {
+        res.status(500).send({ error: error.message });
+    }
+};
+
+// Update product by ID
+const updateProductById = async (req, res) => {
+    const { id } = req.params;
+
+    if (!id || !isValidObjectId(id)) {
+        return res.status(400).send({ message: "Valid product ID is required" });
+    }
+
+    try {
+        const updatedProduct = await productModel.findByIdAndUpdate(id, req.body, { new: true });
+        if (!updatedProduct) {
+            return res.status(404).send({ message: "Product not found" });
+        }
+        res.status(200).send(updatedProduct);
+    } catch (error) {
+        res.status(500).send({ error: error.message });
+    }
+};
+
+// Delete product by ID
+const deleteProductById = async (req, res) => {
+    const { id } = req.params;
+
+    if (!id || !isValidObjectId(id)) {
+        return res.status(400).send({ message: "Valid product ID is required" });
+    }
+
+    try {
+        const deletedProduct = await productModel.findByIdAndDelete(id);
+        if (!deletedProduct) {
+            return res.status(404).send({ message: "Product not found" });
+        }
+        res.status(200).send({ message: "Product deleted successfully", deletedProduct });
+    } catch (error) {
+        res.status(500).send({ error: error.message });
+    }
+};
+
+module.exports = {
+    createProduct,
+    getProductById,
+    getAllProducts,
+    updateProductById,
+    deleteProductById
+};
