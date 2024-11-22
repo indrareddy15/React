@@ -18,6 +18,7 @@ const createProduct = async (req, res) => {
         const newProduct = await productModel.create(req.body);
         res.status(201).send(newProduct);
     } catch (error) {
+        console.log(error);
         if (error.code === 11000) {
             return res.status(409).send({ message: `Product with name '${error.keyValue.name}' already exists` });
         }
