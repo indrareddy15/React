@@ -1,0 +1,33 @@
+{
+  "name": "discoform1",
+  "version": "1.0.0",
+  "description": "Ciro Session_6 Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "script": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "joi",
+    "env",
+    "middleware",
+    "mongodb",
+    "mongoose",
+    "models schema",
+    "createing",
+    "and",
+    "reading"
+  ],
+  "author": "Ganta Indra Reddy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "joi": "^17.13.3",
+    "mongoose": "^8.8.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.7"
+  }
+}
