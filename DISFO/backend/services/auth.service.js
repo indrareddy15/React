@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const Jwt = require("jsonwebtoken")
 const User = require("../models/user.model");
 
 class AuthService {
@@ -20,6 +21,8 @@ class AuthService {
     }
 
     comparePwd = (plainTextPwd, hashedPassword) => bcrypt.compare(plainTextPwd, hashedPassword)
+
+    generateJwt = (payload) => Jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: "20s" })
 }
 
 module.exports = AuthService;
