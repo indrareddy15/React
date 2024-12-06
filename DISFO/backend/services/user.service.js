@@ -25,6 +25,15 @@ class UserService {
       throw error;
     }
   };
+
+  findById = async (userId) => {
+    try {
+      const resId = await Users.findById({ userId })
+      return resId;
+    } catch (error) {
+      throw error
+    }
+  }
 }
 
 module.exports = UserService;
