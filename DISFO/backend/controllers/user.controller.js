@@ -20,6 +20,8 @@ const postRegister = async (req, res) => {
 const getUserByUsername = async (req, res) => {
   try {
     const { username } = req.params;
+    console.log("username", username)
+    // if (req.user.username !== username) return res.sendStatus(403)
     const userResult = await UserServiceInstance.findByUsername(username);
     if (userResult) {
       res.json(userResult);
