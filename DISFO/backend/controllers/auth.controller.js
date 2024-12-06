@@ -35,7 +35,11 @@ const postLogin = async (req, res) => {
 
         if (matchedPwd) {
             const token = authService.generateJwt({ userId: reqUser._id })
-            res.set('remember-user-token', token);
+            console.log(token)
+            res.cookie('remember-user-token', token, {
+                httpOnly: true,
+                maxAge: 1 * 60 * 60 * 1000
+            });
             return res.status(200).send({ matchedPwd });
             // return res.status(200).send({ message: "Login successful" });
         } else {
