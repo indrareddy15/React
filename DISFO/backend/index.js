@@ -29,8 +29,8 @@ app.use(cors(corsOptions))
 app.use(express.json());
 app.use("/user", userRoutes);
 app.use("/discussion", discussionRoutes);
-
 app.use("/auth", authRoutes)
+
 
 app.listen(PORT, () => {
   console.log("Server Listening at", PORT);
