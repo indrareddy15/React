@@ -38,7 +38,7 @@ const postLogin = async (req, res) => {
             console.log(token)
             res.cookie('remember-user-token', token, {
                 httpOnly: true,
-                maxAge: 1 * 60 * 60 * 1000
+                maxAge: 2 * 60 * 1000
             });
             return res.status(200).send({ matchedPwd });
             // return res.status(200).send({ message: "Login successful" });
