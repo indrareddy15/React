@@ -22,7 +22,7 @@ class AuthService {
 
     comparePwd = (plainTextPwd, hashedPassword) => bcrypt.compare(plainTextPwd, hashedPassword)
 
-    generateJwt = (payload) => Jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: "2000s" })
+    generateJwt = (payload) => Jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: "2m" })
 
     verifyJwt = (token) => Jwt.verify(token, process.env.JWT_SECRET_KEY)
 }
