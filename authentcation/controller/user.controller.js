@@ -4,6 +4,7 @@ const userServiceInstance = new UserService();
 const postUser = async (req, res) => {
     try {
         const user = await userServiceInstance.register(req.body);
+        console.log(user)
         res.status(201).json(user);
     } catch (error) {
         if (error.code === 11000) { // Duplicate key error
