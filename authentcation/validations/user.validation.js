@@ -1,10 +1,10 @@
 const Joi = require("joi");
 
 const userValidationSchema = Joi.object({
-    fullName: Joi.string()
+    fullname: Joi.string()
         .min(3)
         .max(25)
-        .required(),
+        .optional(),
 
     username: Joi.string()
         .alphanum()
@@ -20,3 +20,5 @@ const userValidationSchema = Joi.object({
         .max(25)
         .required()
 })
+
+module.exports = { userValidationSchema };
