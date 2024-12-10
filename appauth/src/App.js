@@ -1,23 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Login from './components/Login';
-import Register from './components/Register';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './components/auth/Login';
+import Dashboard from './components/dashboard/Dashboard';
+import ExamInterface from './components/exam/ExamInterface';
+import styled from 'styled-components';
 
-const App = () => {
+function App() {
   return (
-    <Router>
-      <nav>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<h2>Welcome! Please Login or Register.</h2>} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-    </Router>
+    <AppContainer>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/exam/:id" element={<ExamInterface />} />
+        </Routes>
+      </Router>
+    </AppContainer>
   );
-};
+}
+
+const AppContainer = styled.div`
+  min-height: 100vh;
+  background-color: #f5f6fa;
+`;
 
 export default App;
