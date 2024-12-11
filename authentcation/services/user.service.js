@@ -30,6 +30,8 @@ class UserService {
             throw new Error(`Error fetching user by username: ${error.message}`);
         }
     }
+
+    findById = (userId) => Users.findById(userId)
 }
 
 module.exports = UserService;
