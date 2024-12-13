@@ -31,6 +31,7 @@ const loginUser = async (req, res) => {
 
         if (pwdMatch) {
             const token = await authService.generateJwt({ userId: newUser._id })
+            res.cookie("token", token, { httpOnly: true, maxAge: 2 * 60 * 1000 });
             console.log("token from auth.controller", token)
             res.status(200).json({ message: "Login successful", newUser });
         } else {
