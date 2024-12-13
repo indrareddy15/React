@@ -6,7 +6,7 @@ const authService = new AuthService();
 
 const authorize = async (req, res, next) => {
     try {
-        const authToken = req.headers.authorization;
+        const authToken = req.headers.authorization.split(" ")[1];
         console.log(authToken)
         const { userId } = await authService.verfityJwt(authToken);
         console.log(userId)
