@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt');
 const Jwt = require("jsonwebtoken")
 
 const UserModel = require('../model/user.model');
+console.log('JWT_SECRET: from auth Service', process.env.JWT_SECRET);
 
 class AuthService {
     register = async (user) => {
