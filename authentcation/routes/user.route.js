@@ -2,8 +2,8 @@ const Router = require("express");
 const { postUser, getAllUser, getUserByName } = require("../controller/user.controller");
 const { validateSchema } = require("../middleware/user.middleware")
 const { userValidationSchema } = require("../validations/user.validation");
-// const authorize = require("../middleware/authorize-jwt.middleware")
-const authorize = require("../middleware/authorize-passport")
+const authorize = require("../middleware/authorize-jwt.middleware")
+// const authorize = require("../middleware/authorize-passport")
 
 const router = Router();
 
