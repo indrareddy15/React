@@ -31,12 +31,13 @@ const postLogin = async (req, res) => {
 
         if (matchedPwd) {
             const token = authServiceInstance.generateJwt({ userId: user._id });
-            console.log("token", token);
+            console.log("token 8081 auth controller", token);
             res.cookie("token", token, { httpOnly: true, maxAge: 2 * 60 * 1000 });
             res.status(200).json({ message: "Login successful", user });
         } else {
             res.status(401).json({ message: "Login failed", reason: "Invalid credentials" });
         }
+        // res.status(200).send(user)
     } catch (error) {
         res.status(500).json({ message: "Failed to login", error: error.message });
     }
