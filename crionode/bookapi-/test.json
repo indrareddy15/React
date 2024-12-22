@@ -1,0 +1,122 @@
+[
+    {
+        "title": "The Night Circus",
+        "author": "Erin Morgenstern",
+        "ISBN": "978-0307744432",
+        "publicationDate": "2011-09-13T00:00:00.000Z",
+        "price": 13.99,
+        "currency": "USD"
+    },
+    {
+        "title": "Educated",
+        "author": "Tara Westover",
+        "ISBN": "978-0399590504",
+        "publicationDate": "2018-02-20T00:00:00.000Z",
+        "price": 18.99,
+        "currency": "EUR"
+    },
+    {
+        "title": "Where the Crawdads Sing",
+        "author": "Delia Owens",
+        "ISBN": "978-0735219090",
+        "publicationDate": "2018-08-14T00:00:00.000Z",
+        "price": 14.99,
+        "currency": "GBP"
+    },
+    {
+        "title": "The Silent Patient",
+        "author": "Alex Michaelides",
+        "ISBN": "978-1250301697",
+        "publicationDate": "2019-02-05T00:00:00.000Z",
+        "price": 16.99,
+        "currency": "INR"
+    },
+    {
+        "title": "Atomic Habits",
+        "author": "James Clear",
+        "ISBN": "978-0735211292",
+        "publicationDate": "2018-10-16T00:00:00.000Z",
+        "price": 16.95,
+        "currency": "USD"
+    },
+    {
+        "title": "Becoming",
+        "author": "Michelle Obama",
+        "ISBN": "978-1524763138",
+        "publicationDate": "2018-11-13T00:00:00.000Z",
+        "price": 19.99,
+        "currency": "EUR"
+    },
+    {
+        "title": "The Four Agreements",
+        "author": "Don Miguel Ruiz",
+        "ISBN": "978-1878424310",
+        "publicationDate": "1997-11-07T00:00:00.000Z",
+        "price": 12.95,
+        "currency": "GBP"
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "ISBN": "978-0743273565",
+        "publicationDate": "1925-04-10T00:00:00.000Z",
+        "price": 10.99,
+        "currency": "INR"
+    },
+    {
+        "title": "The Book Thief",
+        "author": "Markus Zusak",
+        "ISBN": "978-0375842207",
+        "publicationDate": "2005-03-14T00:00:00.000Z",
+        "price": 13.99,
+        "currency": "USD"
+    },
+    {
+        "title": "The Subtle Art of Not Giving a F*ck",
+        "author": "Mark Manson",
+        "ISBN": "978-0062457714",
+        "publicationDate": "2016-09-13T00:00:00.000Z",
+        "price": 16.99,
+        "currency": "EUR"
+    },
+    {
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+        "ISBN": "978-0062315007",
+        "publicationDate": "1988-01-01T00:00:00.000Z",
+        "price": 15.99,
+        "currency": "GBP"
+    },
+    {
+        "title": "The Hunger Games",
+        "author": "Suzanne Collins",
+        "ISBN": "978-0439023528",
+        "publicationDate": "2008-09-14T00:00:00.000Z",
+        "price": 12.99,
+        "currency": "INR"
+    },
+    {
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "ISBN": "978-0316769488",
+        "publicationDate": "1951-07-16T00:00:00.000Z",
+        "price": 10.99,
+        "currency": "USD"
+    },
+    {
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "ISBN": "978-0441013593",
+        "publicationDate": "1965-08-01T00:00:00.000Z",
+        "price": 18.99,
+        "currency": "EUR"
+    },
+    {
+        "title": "The Priory of the Orange Tree",
+        "author": "Samantha Shannon",
+        "ISBN": "978-1635570298",
+        "publicationDate": "2019-02-26T00:00:00.000Z",
+        "price": 28.00,
+        "currency": "GBP"
+    }
+]
