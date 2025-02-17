@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import workoutStore from "../workoutStore";
+import fitnessStore from "../fitnessStore";
 
 const AddWorkout = ({ addWorkout }) => {
   const [type, setType] = useState("Running");
@@ -38,7 +38,7 @@ const AddWorkout = ({ addWorkout }) => {
 
     // dispatch action to add workout
     // action: an operation that changes the state of the application
-    workoutStore.dispatch()
+    fitnessStore.dispatch()
     const newWorkout = {
       id: Date.now(),
       type,
@@ -47,7 +47,7 @@ const AddWorkout = ({ addWorkout }) => {
       date: new Date().toISOString().split("T")[0],
     };
 
-    // addWorkout(newWorkout);
+    addWorkout(newWorkout);
     setDuration("");
     setCalories("");
   };
