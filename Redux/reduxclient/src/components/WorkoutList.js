@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
-import workoutStore from "../workoutStore";
+import fitnessStore from "../fitnessStore";
 
 const WorkoutList = () => {
-  const workouts = workoutStore.getState().workouts;
+  const workouts = fitnessStore.getState().workouts;
   const [state, setState] = React.useState(workouts);
 
   useEffect(() => {
-    workoutStore.subscribe(() => {
-      setState(workoutStore.getState().workouts)
+    fitnessStore.subscribe(() => {
+      setState(fitnessStore.getState().workouts)
     });
   }, [state])
   return (
