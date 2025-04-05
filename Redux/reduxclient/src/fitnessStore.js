@@ -1,27 +1,27 @@
 import createStore from "./library/createStore"
 
-const INITIAL_STATE = {
-    workouts: []
-}
+// const INITIAL_STATE = {
+//     workouts: []
+// }
 
-function handler(state) {
-    console.log("Old State", state);
+// function handler(state) {
+//     console.log("Old State", state);
 
-    state.workouts.push({
-        id: Math.floor(Math.random() * 10),
-        type: "Running",
-        duration: 30,
-        calories: 300,
-        date: new Date().toLocaleDateString(),
-    })
+//     state.workouts.push({
+//         id: Math.floor(Math.random() * 10),
+//         type: "Running",
+//         duration: 30,
+//         calories: 300,
+//         date: new Date().toLocaleDateString(),
+//     })
 
-    console.log("New State", state);
-}
+//     console.log("New State", state);
+// }
 
-const fitnessStore = createStore(INITIAL_STATE, handler);
+// const fitnessStore = createStore(INITIAL_STATE, handler);
 
 
-export default fitnessStore;
+// export default fitnessStore;
 
 /*
 Requirements: Onclick of the addtoWorkout button, 
@@ -29,3 +29,34 @@ user should be able to modify the state of the createStore
 
 The new item should be added to the workouts array in the state [UI]
 */
+
+const INITIAL_STATE = {
+    workouts: [
+        {
+            id: Math.floor(Math.random() * 10),
+            type: "Running",
+            duration: 30,
+            calories: 300,
+            date: new Date().toLocaleDateString(),
+        },
+        {
+            id: Math.floor(Math.random() * 10),
+            type: "Cycling",
+            duration: 45,
+            calories: 400,
+            date: new Date().toLocaleDateString(),
+        },
+        {
+            id: Math.floor(Math.random() * 10),
+            type: "Swimming",
+            duration: 60,
+            calories: 500,
+            date: new Date().toLocaleDateString(),
+        }
+    ]
+}
+
+const fitnessStore = createStore(INITIAL_STATE)
+
+
+export default fitnessStore;
