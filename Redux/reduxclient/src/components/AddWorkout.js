@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import fitnessStore from "../fitnessStore";
+import { addWorkout } from "../actions";
 
-const AddWorkout = ({ addWorkout }) => {
+
+const AddWorkout = (/*{ addWorkout }*/) => {
   const [type, setType] = useState("Running");
   const [duration, setDuration] = useState("");
   const [calories, setCalories] = useState("");
@@ -38,7 +40,6 @@ const AddWorkout = ({ addWorkout }) => {
 
     // dispatch action to add workout
     // action: an operation that changes the state of the application
-    fitnessStore.dispatch()
     const newWorkout = {
       id: Date.now(),
       type,
@@ -47,7 +48,9 @@ const AddWorkout = ({ addWorkout }) => {
       date: new Date().toISOString().split("T")[0],
     };
 
-    addWorkout(newWorkout);
+    fitnessStore.dispatch(addWorkout(newWorkout));
+
+    // addWorkout(newWorkout);
     setDuration("");
     setCalories("");
   };
