@@ -1,27 +1,44 @@
+import { ADD_WORKOUT } from "./actionConstants";
 import createStore from "./library/createStore"
 
-// const INITIAL_STATE = {
-//     workouts: []
-// }
+const INITIAL_STATE = {
+    workouts: []
+}
 
-// function handler(state) {
-//     console.log("Old State", state);
+function reducer(state, action) {
+    // push --> changes the array in place
+    // reassign --> will re-render
+    // we need some level of identification anout
+    // what action it that we want to excute
+    // based on that do the "relevant" state chnages
 
-//     state.workouts.push({
-//         id: Math.floor(Math.random() * 10),
-//         type: "Running",
-//         duration: 30,
-//         calories: 300,
-//         date: new Date().toLocaleDateString(),
-//     })
+    // data is nothing but the action
 
-//     console.log("New State", state);
-// }
+    // if data is an object  ==> data: {"type": "addWorkout" || "removeWorkout" , "payload": {}}
+    // payload is the collection of data that we want to pass to the reducer [important information required to perform the action effect ]
 
-// const fitnessStore = createStore(INITIAL_STATE, handler);
+    // Now coming to data which is action
+    // action : {"type": "string ", "payload": {}}
+    // state.workouts.push(
+    //     ...state.workouts, // spread operator to get the old workouts
+    //     action // action is nothing but the new workout object
+    // )
+
+    switch (action.type) {
+        case ADD_WORKOUT:
+            state.workouts = [...state.workouts, action.payload];
+            break;
+
+        default:
+    }
+
+    console.log("New State", action);
+}
+
+const fitnessStore = createStore(INITIAL_STATE, reducer);
 
 
-// export default fitnessStore;
+export default fitnessStore;
 
 /*
 Requirements: Onclick of the addtoWorkout button, 
@@ -30,33 +47,22 @@ user should be able to modify the state of the createStore
 The new item should be added to the workouts array in the state [UI]
 */
 
-const INITIAL_STATE = {
-    workouts: [
-        {
-            id: Math.floor(Math.random() * 10),
-            type: "Running",
-            duration: 30,
-            calories: 300,
-            date: new Date().toLocaleDateString(),
-        },
-        {
-            id: Math.floor(Math.random() * 10),
-            type: "Cycling",
-            duration: 45,
-            calories: 400,
-            date: new Date().toLocaleDateString(),
-        },
-        {
-            id: Math.floor(Math.random() * 10),
-            type: "Swimming",
-            duration: 60,
-            calories: 500,
-            date: new Date().toLocaleDateString(),
-        }
-    ]
-}
+/*
+as application grows, we need to manage the state of the application and new features are coming
+TODO ITEMS (features set)
+1.Adding workout
+2.Filter workout
+3.Set goals
+4.Track progress
 
-const fitnessStore = createStore(INITIAL_STATE)
+we have multiple functions but the limitation is that we have only one store create Store will accept only one which means
+we need to reduce 
+
+Reducer
+Goal of the reducer will take all the handlers and make sure that createStore will recieve only one single handler (function)
 
 
-export default fitnessStore;
+once you have an action the job of reducer is to take the action figure out what is right steps to do  [return a new state]
+*/
+
+
