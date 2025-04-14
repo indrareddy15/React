@@ -1,0 +1,160 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: -16rem;
+  z-index: 1;
+}
+
+h2 {
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #fafafa;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+li button {
+  margin-left: 10px;
+}
+
+.flex-view {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.goals {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* WorkoutFilter.css */
+.filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Adds space between buttons */
+}
+
+.filter-list button {
+  padding: 8px 16px;
+  border: 2px solid #ccc; /* Subdued border color for unselected */
+  background-color: #f9f9f9; /* Light background for unselected */
+  color: #666; /* Darker text for contrast */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-list button.selected {
+  border-color: #4caf50; /* Green border for selected */
+  background-color: #a5d6a7; /* Light green background for selected */
+  color: #fff; /* White text for selected */
+}
+
+.filter-list button:hover {
+  background-color: #ddd; /* Slightly darker background on hover for unselected */
+}
+
+.filter-list button.selected:hover {
+  background-color: #81c784; /* Slightly darker green on hover for selected */
+}
+
+/* Dashboard.css */
+.section {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.title {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.flex-view {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.flex-view .goals {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 20px;
+  background-color: #4caf50;
+  width: 0%; /* Initial width */
+  border-radius: 8px;
+  transition: width 0.5s ease-in-out;
+}
+
+.progress-info {
+  margin: 10px 0;
+}
